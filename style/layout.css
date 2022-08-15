@@ -2,10 +2,39 @@ body {
     background-color: black;
     color: white;
 }
+ feat/form
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
 
+.container h1,
+a {
+    width: 100%;
+    text-decoration: none;
+}
+
+form {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    width: min-content;
+}
+
+.style-input {
+    margin-bottom: 10px;
+    flex-direction: column;
+    width: 200px;
+}
+
+form button {
+    margin-bottom: 50px;
+=======
 .container h1,
 label,
 a {
     text-decoration: none;
     color: white;
+main
 }
