@@ -1,0 +1,19 @@
+.pizzas {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.pizzas img {
+    border-radius: 5px;
+    width: 700px;
+    height: 550px;
+    margin: 20px;
+    margin-bottom: 40px;
+}
+
+.escrito-parma {
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+}
