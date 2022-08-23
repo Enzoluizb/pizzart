@@ -11,31 +11,29 @@ include "header.php";
     <title><?php echo $title; ?></title>
     <link rel="stylesheet" href="assets/css/login.css">
 </head>
-    
-    <main class="conteudo">
-        <section class="conteudo-principal">
-            <div class="conteudo-principal-escrito">
-                <h1 class="conteudo-principal-escrito-titulo">PIZZART</h1>
-                <h2 class="conteudo-principal-escrito-subtitulo">Você está quase lá</h2>
-            </div>
-            <img class="conteudo-principal-imagem" src="assets/img/logo.jpg" alt="">
-        </section>
 
-        <div class="container">
-                            
+<main class="conteudo mx-auto container" style="">
+    <section class="conteudo-principal row py-5">
+        <div class="conteudo-principal-escrito col-md-6 text-md-end">
+            <!-- <img class="conteudo-principal-imagem" src="assets/img/logo.jpg" alt=""> -->
+            <h1 class="conteudo-principal-escrito-titulo ">PIZZART</h1>
+            <h2 class="conteudo-principal-escrito-subtitulo ">Você está quase lá</h2>
+        </div>
+        <div class="col-md-6">
             <div class="login-screen">
-            
-                <form class="form">
+                <form class="form p-2 pt-5">
                     <h3 class="title">Entre Para Continuar</h3>
-                    <input type="email" name="user" placeholder="Email" class="inputs" />
-                    <input type="password" name="pass" placeholder="Senha" class="inputs" />
+                    <input type="email" name="user" placeholder="Email" class="rounded-3 border border-dark px-3 mb-2" />
+                    <input type="password" name="pass" placeholder="Senha" class="rounded-3 border border-dark px-3 mb-2" />
                     <button class="btn">Entrar</button>
                     <a href="#">Esqueceu a Senha?</a>
                     <p class="description">Criar Conta?<a href="cadastro.php">Clique Aqui</a></p>
                 </form>
             </div>
         </div>
-    </main>
+    </section>
+
+</main>
 <br> <br> <br> <br> <br> <br>
 
 <?php

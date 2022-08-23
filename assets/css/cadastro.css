@@ -4,7 +4,6 @@
     padding: 0;
     box-sizing: border-box;
     text-decoration: none;
-    font-family: 'Sarala', sans-serif;
 }
 
 body {
@@ -101,6 +100,7 @@ body {
 
 .rodape {
     padding: 32px;
+    border-top: 0.4px solid #FFF2E7;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
@@ -126,7 +126,7 @@ body {
 }
 
 a:hover {
-    color: rgb(124, 124, 124);
+    color: black;
 }
 
 .container {
@@ -135,16 +135,17 @@ a:hover {
 }
 
 .login-screen {
-    width: 300px;
-    background-image: linear-gradient(rgb(255, 255, 255), rgb(196, 196, 196));
+    /* width: 300px;
+    height: 600px; */
+    background-image: linear-gradient(white, white);
     border-radius: 15px;
-    /* position: absolute;
-    left: 45%;
-    top: 45%;
+    /* position: absolute; */
+    /* left: 45%;
+    top: 48%;
     transform: translate(-50%, -50%); */
     text-align: center;
-    /* padding-top: 100px; */
-    color: rgb(0, 0, 0);
+    padding-top: 10px;
+    color: black;
     align-items: center;
     line-height: 50px;
 }
@@ -158,7 +159,7 @@ a:hover {
     width: 80%;
     margin: 0 auto;
     padding: 10px;
-    border: none;
+    border: solid;
     margin-bottom: 10px;
     border-radius: 50px;
 }
@@ -171,15 +172,15 @@ a:hover {
     border: none;
     text-transform: uppercase;
     font-weight: 700;
-    color: rgb(0, 0, 0);
-    background-image: linear-gradient(rgb(255, 255, 255rgb(161, 161, 161) 2));
+    color: #fff;
+    background: linear-gradient(black, black);
     cursor: pointer;
 }
 
 .description {
-    color: rgb(0, 0, 0);
+    color: white;
     font-size: 15px;
-    margin-top: 50px;
+    margin-top: 20px;
 }
 
 .description a {
@@ -194,11 +195,75 @@ a:hover {
 }
 
 .justify {
-    /* position: absolute;
+    position: absolute;
     left: 780px;
-    top: 250px; */
+    top: 250px;
 }
 
 a {
-    color: rgb(0, 0, 0);
+    color: black;
+}
+
+span {
+    color: black;
+}
+
+.container_1 {
+    display: block;
+    position: relative;
+    cursor: pointer;
+    font-size: 22px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.container_1 input {
+    position: center;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+.checkmark {
+    position: absolute;
+    top: 12px;
+    left: 45px;
+    height: 25px;
+    width: 25px;
+    background-color: #eee;
+    border-radius: 50%;
+}
+
+.container_1:hover input~.checkmark {
+    background-color: #ccc;
+}
+
+.container_1 input:checked~.checkmark {
+    background-color: #2196F3;
+}
+
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+.container_1 input:checked~.checkmark:after {
+    display: block;
+}
+
+.container_1 .checkmark:after {
+    top: 9px;
+    left: 9px;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: white;
+}
+
+.container_1 {
+    margin-top: 5px;
 }
