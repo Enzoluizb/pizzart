@@ -9,7 +9,7 @@ include "header.php";
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <script src="https://kit.fontawesome.com/75cc8e2d46.js" crossorigin="anonymous"></script>
     <title><?php echo $title; ?></title>
-    <link rel="stylesheet" href="pizzart/assets/css/suporte.css">
+    <link rel="stylesheet" href="assets/css/suporte.css">
 </head>
 
 <main class="conteudo">
