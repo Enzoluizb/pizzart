@@ -12,7 +12,7 @@ include "header.php";
     <link rel="stylesheet" href="assets/css/login.css">
 </head>
 
-<main class="conteudo mx-auto container" style="">
+<main class="conteudo mx-auto container">
     <section class="conteudo-principal row py-5">
         <div class="conteudo-principal-escrito col-md-6 text-md-end">
             <!-- <img class="conteudo-principal-imagem" src="assets/img/logo.jpg" alt=""> -->
@@ -34,7 +34,7 @@ include "header.php";
     </section>
 
 </main>
-<br> <br> <br> <br> <br> <br>
+
 
 <?php
 include "footer.php";
