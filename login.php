@@ -14,7 +14,7 @@ include "header.php";
 
 <main class="conteudo mx-auto container">
     <section class="conteudo-principal row py-5">
-        <div class="conteudo-principal-escrito col-md-6 text-md-end">
+        <div class="conteudo-principal-escrito col-md-6">
             <!-- <img class="conteudo-principal-imagem" src="assets/img/logo.jpg" alt=""> -->
             <h1 class="conteudo-principal-escrito-titulo ">PIZZART</h1>
             <h2 class="conteudo-principal-escrito-subtitulo ">Você está quase lá</h2>
@@ -32,7 +32,7 @@ include "header.php";
             </div>
         </div>
     </section>
-
+    <br>
 </main>
 
 
