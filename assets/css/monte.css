@@ -342,3 +342,23 @@ div.container-a img {
     margin: 30px 20px 30px 20px;
     border-radius: 10px;
 }
+
+.escrito-complemento1 {
+    color: white;
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+    margin-bottom: 30px;
+    gap: 100px;
+    font-weight: 200;
+}
+
+.escrito-complemento2 {
+    color: white;
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+    margin-bottom: 30px;
+    gap: 125px;
+    font-weight: 200;
+}
