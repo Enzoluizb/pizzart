@@ -2,6 +2,9 @@
 $title = "Pizzart | Cadastro";
 include "header.php";
 
+include "include/mysql.php";
+
+
 $nome = "";
 $email = "";
 $telefone = "";
@@ -17,17 +20,6 @@ $enderecoErro = "";
 $msgErro = "";
 
 if ($_SERVER['REQUEST_METHOD'] == "POST" && isset($_POST['submit'])) {
-    if (!empty($_FILES["image"]["name"])) {
-
-        $fileName = basename($_FILES['image']['name']);
-        $fileType = pathinfo($fileName, PATHINFO_EXTENSION);
-
-        $allowType = array('jpg', 'png', 'jpeg', 'gif');
-
-        if (in_array($fileType, $allowType)) {
-            $image = $_FILES['image']['tmp_name'];
-            $imgContent = file_get_contents($image);
-
             if (empty($_POST['nome']))
                 $nomeErro = "Nome é obrigatório!";
             else
@@ -53,38 +45,36 @@ if ($_SERVER['REQUEST_METHOD'] == "POST" && isset($_POST['submit'])) {
             else
                 $administrador = 0;
 
-            if ($email && $nome && $senha && $telefone) {
+            if ($email && $nome && $senha && $telefone && $endereco) {
                 $sql = $pdo->prepare("SELECT * FROM USUARIO WHERE email = ?");
                 if ($sql->execute(array($email))) {
                     if ($sql->rowCount() <= 0) {
-                        $sql = $pdo->prepare("INSERT INTO USUARIO (codigo, nome, email, telefone, senha, administrador, imagem)
-                                                VALUES (null, ?, ?, ?, ?, ?, ?)");
-                        if ($sql->execute(array($nome, $email, $telefone, md5($senha), $administrador, $imgContent))) {
+                        $sql = $pdo->prepare("INSERT INTO USUARIO (codigo, nome, email, telefone, senha, administrador, endereco)
+                                                VALUES (null, ?, ?, ?, ?, ?, ?, ?)");
+                        if ($sql->execute(array($nome, $email, $telefone, md5($senha), $administrador, $endereco))) {
                             $msgErro = "Dados cadastrados com sucesso!";
                             $nome = "";
                             $email = "";
                             $telefone = "";
                             $senha = "";
-                            header('location:listUsuario.php');
+                            $endereco = "";
+                            header('location: login.php');
                         } else {
                             $msgErro = "Dados não cadastrados!";
                         }
                     } else {
-                        $msgErro = "Email de usuário já cadastrado!!";
+                        $msgErro = "Email de usuário já cadastrado!";
                     }
                 } else {
-                    $msgErro = "Erro no comando SELECT!";
+                    $msgErro = "Erro no comando select!";
                 }
             } else {
                 $msgErro = "Dados não cadastrados!";
             }
-        } else {
-            $msgErro = "Somente arquivos Jpg, JPEG, PNG, e GIF são permitidos";
         }
-    } else {
-        $msgErro = "Imagem não selecionada";
-    }
-}
+    
+
+
 
 ?>
 
@@ -118,7 +108,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST" && isset($_POST['submit'])) {
                     <input type="password" name="pass" placeholder="Senha" class="rounded-3 border border-dark px-3 mb-2" value="<?php echo $senha ?>" />
                     <span class="obrigatorio"><?php echo $senhaErro ?></span>
 
-                    <input type="text" name="endereço" placeholder="endereço" class="rounded-3 border border-dark px-3 mb-2" value="<?php echo $endereco ?>" />
+                    <input type="text" name="endereco" placeholder="endereço" class="rounded-3 border border-dark px-3 mb-2" value="<?php echo $endereco ?>" />
                     <span class="obrigatorio"><?php echo $enderecoErro ?></span>
 
                     <input type="text" name="telefone" placeholder="telefone" class="rounded-3 border border-dark px-3" value="<?php echo $telefone ?>" />
@@ -129,7 +119,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST" && isset($_POST['submit'])) {
                         <span class="checkmark"></span>
                     </label>
 
-                    <button class="btn">Entrar</button>
+                    <input class="btn" type="submit" value="Enviar" name="submit">
                     <p class="description"><a href="login.php">Login</a></p>
                 </form>
             </div>
