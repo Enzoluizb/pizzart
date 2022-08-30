@@ -9,14 +9,14 @@ $nome = "";
 $email = "";
 $telefone = "";
 $senha = "";
-$endereco = "";
+$cidade = "";
 $administrador = "";
 
 $nomeErro = "";
 $emailErro = "";
 $telefoneErro = "";
 $senhaErro = "";
-$enderecoErro = "";
+$cidadeErro = "";
 $msgErro = "";
 
 if ($_SERVER['REQUEST_METHOD'] == "POST" && isset($_POST['submit'])) {
@@ -44,20 +44,24 @@ if ($_SERVER['REQUEST_METHOD'] == "POST" && isset($_POST['submit'])) {
                 $administrador = 1;
             else
                 $administrador = 0;
+            if (empty($_POST['cidade']))
+                $cidade = "Cidade Obrigatória";
+                else 
+                $cidade = $_POST['cidade'];
 
             if ($email && $nome && $senha && $telefone && $endereco) {
                 $sql = $pdo->prepare("SELECT * FROM USUARIO WHERE email = ?");
                 if ($sql->execute(array($email))) {
                     if ($sql->rowCount() <= 0) {
-                        $sql = $pdo->prepare("INSERT INTO USUARIO (codigo, nome, email, telefone, senha, administrador, endereco)
+                        $sql = $pdo->prepare("INSERT INTO USUARIO (codigo, nome, email, telefone, senha, administrador, cidade)
                                                 VALUES (null, ?, ?, ?, ?, ?, ?, ?)");
-                        if ($sql->execute(array($nome, $email, $telefone, md5($senha), $administrador, $endereco))) {
+                        if ($sql->execute(array($nome, $email, $telefone, md5($senha), $administrador, $cidade))) {
                             $msgErro = "Dados cadastrados com sucesso!";
                             $nome = "";
                             $email = "";
                             $telefone = "";
                             $senha = "";
-                            $endereco = "";
+                            $cidade = "";
                             header('location: login.php');
                         } else {
                             $msgErro = "Dados não cadastrados!";
@@ -108,11 +112,22 @@ if ($_SERVER['REQUEST_METHOD'] == "POST" && isset($_POST['submit'])) {
                     <input type="password" name="pass" placeholder="Senha" class="rounded-3 border border-dark px-3 mb-2" value="<?php echo $senha ?>" />
                     <span class="obrigatorio"><?php echo $senhaErro ?></span>
 
-                    <input type="text" name="endereco" placeholder="endereço" class="rounded-3 border border-dark px-3 mb-2" value="<?php echo $endereco ?>" />
-                    <span class="obrigatorio"><?php echo $enderecoErro ?></span>
+                    <input type="text" name="endereco" placeholder="endereço" class="rounded-3 border border-dark px-3 mb-2" value="<?php echo $cidade ?>" />
+                    <span class="obrigatorio"><?php echo $cidadeErro ?></span>
 
                     <input type="text" name="telefone" placeholder="telefone" class="rounded-3 border border-dark px-3" value="<?php echo $telefone ?>" />
                     <span class="obrigatorio"><?php echo $telefoneErro ?></span>
+                    
+            <select name="cidade" id="" class="rounded-3 border border-dark px-3" >
+                <?php
+                $sql1 = $pdo->prepare('SELECT * FROM cidade');
+                if ($sql1->execute()) {
+                    $info = $sql1->fetchAll(PDO::FETCH_ASSOC);
+                    foreach ($info as $key => $value)
+                        echo '<option value='.$value['codigo'].'>'.$value['nome'].'</option>';
+                }
+                ?>
+            </select>
 
                     <label class="container_1">administrador
                         <input type="checkbox" checked="checked">
