@@ -4,7 +4,6 @@
     padding: 0;
     box-sizing: border-box;
     text-decoration: none;
-    font-family: 'Sarala', sans-serif;
 }
 
 body {
@@ -109,17 +108,19 @@ body {
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
-    background-color: #ffffff;
+    background-color: #fffbfb;
     margin-top: 200px;
 }
 
 .rodape-imagem {
     height: 140px;
+    border-radius: 360px;
 }
 
 .s-m {
     display: flex;
     gap: 25px;
+    color: black;
 }
 
 .s-m i {
@@ -139,6 +140,7 @@ body {
     flex-direction: column;
     justify-content: space-around;
     margin-top: 10px;
+    font-size: 15px;
 }
 
 label {
@@ -146,35 +148,42 @@ label {
 }
 
 input {
-    border: 1px solid black;
+    border: 2px solid black;
     font-size: 10px;
-    padding: 10px;
-    width: 500px;
-    box-shadow: 0 0 30px gray;
+    width: 600px;
     text-align: left;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
+    margin: 0 auto;
+    border: solid;
+    padding: 20px;
+    margin-bottom: 10px;
+    border-radius: 50px;
 }
 
 h2 {
     margin-top: 30px;
 }
 
-.teste {
-    background-color: rgba(126, 126, 126, 0.637);
-    width: 100px;
-    font-size: 20px;
+.btn {
+    width: 80%;
+    margin: 0 auto;
+    border-radius: 50px;
+    border: none;
+    text-transform: uppercase;
+    font-weight: 700;
+    cursor: pointer;
     margin-top: 30px;
-    margin-left: 40px;
 }
 
 .div-lado1 {
     padding: 70px;
-    font-size: 30px;
+    font-size: 20px;
     text-align: center;
     margin-top: 200px;
     background-color: #ffffff;
+    border: 2px solid rgb(255, 255, 255);
     border-radius: 30px;
 }
 
@@ -185,6 +194,7 @@ h2 {
     margin-top: 200px;
     background-color: #ffffff;
     font-size: 20px;
+    border: 2px solid #ffffff;
     border-radius: 30px;
 }
 
@@ -197,8 +207,32 @@ h2 {
 
 .contato {
     margin-top: 150px;
+    columns: rgb(255, 255, 255);
 }
 
 .numero {
-    margin-top: 30px;
+    margin-top: 60px;
+}
+
+.tele {
+    max-width: 40px;
+}
+
+.numimg {
+    text-align: left;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.local {
+    display: flex;
+    flex-direction: column;
+    margin-top: 50px;
+}
+
+.enviar input {
+    color: rgb(255, 255, 255);
+    background-color: black;
 }
