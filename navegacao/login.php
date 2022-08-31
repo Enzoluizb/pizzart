@@ -1,55 +1,57 @@
 <?php
-    include "header.php";
-    include "../include/MySql.php";
-    include "../include/functions.php";
+$title = "Pizzart | Login";
+include "header.php";
+include "../include/MySql.php";
+include "../include/functions.php";
 
-    session_start();
-    $_SESSION['nome'] = "";
-    $_SESSION['administrador'] = "";
+session_start();
+$_SESSION['nome'] = "";
+$_SESSION['administrador'] = "";
 
-    $email="";
-    $emailErro="";
-    $senha="";
-    $senhaErro="";
-    $msgErro = "";
+$email = "";
+$emailErro = "";
+$senha = "";
+$senhaErro = "";
+$msgErro = "";
 
-    if ($_SERVER['REQUEST_METHOD'] == 'POST'){
-        if (empty($_POST['email'])){
-            $emailErro = "Email é obrigatório";
-        } else {
-            $email = test_input($_POST['email']);
-        }
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    if (empty($_POST['email'])) {
+        $emailErro = "Email é obrigatório";
+    } else {
+        $email = test_input($_POST['email']);
+    }
 
-        if (empty($_POST['senha'])){
-            $senhaErro = "Senha é obrigatório";
-        } else {
-            $senha = test_input($_POST['senha']);
-        }
+    if (empty($_POST['senha'])) {
+        $senhaErro = "Senha é obrigatório";
+    } else {
+        $senha = test_input($_POST['senha']);
+    }
 
-        if ($email && $senha){
-            $sql = $pdo->prepare("SELECT * FROM USUARIO WHERE email=? AND senha=?");
-            if ($sql->execute(array($email, MD5($senha)))){
-                $info = $sql->fetchAll(PDO::FETCH_ASSOC);
-                if (count($info) > 0){
-                    foreach($info as $key=>$values){
-                        $_SESSION['nome'] = $values['nome'];
-                        $_SESSION['administrador'] = '1';
-                        header('location:index.php');
-                    }    
-                } else {
-                    $msgErro = "Usuário não cadastrado!";
+    if ($email && $senha) {
+        $sql = $pdo->prepare("SELECT * FROM USUARIO WHERE email=? AND senha=?");
+        if ($sql->execute(array($email, MD5($senha)))) {
+            $info = $sql->fetchAll(PDO::FETCH_ASSOC);
+            if (count($info) > 0) {
+                foreach ($info as $key => $values) {
+                    $_SESSION['nome'] = $values['nome'];
+                    $_SESSION['administrador'] = '1';
+                    header('location:index.php');
                 }
             } else {
                 $msgErro = "Usuário não cadastrado!";
             }
+        } else {
+            $msgErro = "Usuário não cadastrado!";
         }
     }
+}
 
 
 
 ?>
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -58,23 +60,38 @@
     <title><?php echo $title; ?></title>
     <link rel="stylesheet" href="../assets/css/login.css">
 </head>
+
 <body>
-    <form method="POST" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']);?>">
-        <fieldset>
-            <legend>Login</legend>
-            <label for="email">Email:</label>
-            <input type="text" name="email" value="<?php echo $email ?>">
-            <br>
-            <label for="senha">Senha:</label>
-            <input type="password" name="senha" value="<?php echo $senha?>">
-            <br>
-            <input type="submit" value="Login" name="login">
-        </fieldset>
-        <h3><a href="cadUsuario.php">Novo cadastro</a></h3>
-    </form>
-    <span><?php echo $msgErro?></span>
+    <main class="conteudo mx-auto container">
+        <section class="conteudo-principal row py-5">
+            <div class="conteudo-principal-escrito col-md-6">
+                <!-- <img class="conteudo-principal-imagem" src="assets/img/logo.jpg" alt=""> -->
+                <h1 class="conteudo-principal-escrito-titulo ">PIZZART</h1>
+                <h2 class="conteudo-principal-escrito-subtitulo ">Você está quase lá</h2>
+            </div>
+            <div class="col-md-6">
+                <div class="login-screen">
+                    <form method="POST" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" class="form p-1 pt-5">
+                        <fieldset>
+                            <legend>Login</legend>
+                            <label for="email">Email:</label>
+                            <input type="text" name="email" placeholder="Email" class="rounded-3 border border-dark px-3 mb-2" value="<?php echo $email ?>">
+                            <br>
+                            <label for="senha">Senha:</label>
+                            <input type="password" name="senha" placeholder="Email" class="rounded-3 border border-dark px-3 mb-2" value="<?php echo $senha ?>">
+                            <br>
+                            <input type="submit" value="Login" name="login" class="login">
+                            <p>Não tem conta?<a href="cadUsuario.php">Clique aqui!</a></p>
+                        </fieldset>
+                    </form>
+                </div>
+            </div>
+        </section>
+        <br>
+    </main>
 
 </body>
+
 </html>
 
 <?php
