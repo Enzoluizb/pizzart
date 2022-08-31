@@ -44,17 +44,13 @@ if ($_SERVER['REQUEST_METHOD'] == "POST" && isset($_POST['submit'])) {
                 $administrador = 1;
             else
                 $administrador = 0;
-            if (empty($_POST['cidade']))
-                $cidade = "Cidade Obrigatória";
-                else 
-                $cidade = $_POST['cidade'];
 
-            if ($email && $nome && $senha && $telefone && $endereco) {
+            if ($email && $nome && $senha && $telefone && $cidade) {
                 $sql = $pdo->prepare("SELECT * FROM USUARIO WHERE email = ?");
                 if ($sql->execute(array($email))) {
                     if ($sql->rowCount() <= 0) {
                         $sql = $pdo->prepare("INSERT INTO USUARIO (codigo, nome, email, telefone, senha, administrador, cidade)
-                                                VALUES (null, ?, ?, ?, ?, ?, ?, ?)");
+                                                VALUES (null, ?, ?, ?, ?, ?, ?)");
                         if ($sql->execute(array($nome, $email, $telefone, md5($senha), $administrador, $cidade))) {
                             $msgErro = "Dados cadastrados com sucesso!";
                             $nome = "";
@@ -106,17 +102,18 @@ if ($_SERVER['REQUEST_METHOD'] == "POST" && isset($_POST['submit'])) {
                     <input type="text" name="username" placeholder="Nome" class="rounded-3 border border-dark px-3 mb-2" value="<?php echo $nome ?>" />
                     <span class="obrigatorio"><?php echo $nomeErro ?></span>
 
-                    <input type="email" name="user" placeholder="Email" class="rounded-3 border border-dark px-3 mb-2" value="<?php echo $email ?>" />
+                    <input type="email" name="email" placeholder="Email" class="rounded-3 border border-dark px-3 mb-2" value="<?php echo $email ?>" />
                     <span class="obrigatorio"><?php echo $emailErro ?></span>
 
                     <input type="password" name="pass" placeholder="Senha" class="rounded-3 border border-dark px-3 mb-2" value="<?php echo $senha ?>" />
                     <span class="obrigatorio"><?php echo $senhaErro ?></span>
+                    
+                    <input type="text" name="telefone" placeholder="telefone" class="rounded-3 border border-dark px-3 mb-2" value="<?php echo $telefone ?>" />
+                    <span class="obrigatorio"><?php echo $telefoneErro ?></span>
 
                     <input type="text" name="endereco" placeholder="endereço" class="rounded-3 border border-dark px-3 mb-2" value="<?php echo $cidade ?>" />
                     <span class="obrigatorio"><?php echo $cidadeErro ?></span>
 
-                    <input type="text" name="telefone" placeholder="telefone" class="rounded-3 border border-dark px-3" value="<?php echo $telefone ?>" />
-                    <span class="obrigatorio"><?php echo $telefoneErro ?></span>
                     
             <select name="cidade" id="" class="rounded-3 border border-dark px-3" >
                 <?php

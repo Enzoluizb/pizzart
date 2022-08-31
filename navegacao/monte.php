@@ -10,7 +10,7 @@ include "header.php";
             <h1 class="conteudo-principal-escrito-titulo">PIZZART</h1>
             <h2 class="conteudo-principal-escrito-subtitulo">Monte sua pizza da maneira que quiser!</h2>
         </div>
-        <img class="conteudo-principal-imagem" src="assets/imgs/pizzartpng.png" alt="">
+        <img class="conteudo-principal-imagem" src="../assets/imgs/pizzartpng.png" alt="">
     </section>
 
     <section class="conteudo-secundario">
@@ -26,9 +26,9 @@ include "header.php";
         <h1>MASSA</h1>
         <p>Escolha uma opção</p>
     </div>
-    <div class="massa">
-        <img src="assets/imgs/massas/tradicional.jpg" alt="">
-        <img src="assets/imgs/massas/integral.jpg" alt="">
+    <div class="massa"> 
+        <img src="../assets/imgs/massas/tradicional.jpg" alt="">
+        <img src="../assets/imgs/massas/integral.jpg" alt="">
     </div>
     <div class="escrito-massa">
         <label class="container_1">Tradicional
@@ -45,9 +45,9 @@ include "header.php";
         <p>Escolha o tamanho</p>
     </div>
     <div class="tamanho">
-        <img src="assets/imgs/tamanho/20CM.png" alt="">
-        <img src="assets/imgs/tamanho/30CM.png" alt="">
-        <img src="assets/imgs/tamanho/40CM.png" alt="">
+        <img src="../assets/imgs/tamanho/20CM.png" alt="">
+        <img src="../assets/imgs/tamanho/30CM.png" alt="">
+        <img src="../assets/imgs/tamanho/40CM.png" alt="">
     </div>
     <div class="escrito-tamanho">
         <label class="container_1">Pequena
@@ -68,9 +68,9 @@ include "header.php";
         <p>Escolha seu molho</p>
     </div>
     <div class="molho">
-        <img src="assets/imgs/molho/tomate.png" alt="">
-        <img src="assets/imgs/molho/pimenta.png" alt="">
-        <img src="assets/imgs/molho/pesto.png" alt="">
+        <img src="../assets/imgs/molho/tomate.png" alt="">
+        <img src="../assets/imgs/molho/pimenta.png" alt="">
+        <img src="../assets/imgs/molho/pesto.png" alt="">
     </div>
     <div class="escrito-molho">
         <label class="container_1">Tomate
@@ -91,9 +91,9 @@ include "header.php";
         <p>Escolha um queijo</p>
     </div>
     <div class="queijo">
-        <img src="assets/imgs/queijos/gorgonzola.jpg" alt="">
-        <img src="assets/imgs/queijos/mussarela.webp" alt="">
-        <img src="assets/imgs/queijos/parmesao.webp" alt="">
+        <img src="../assets/imgs/queijos/gorgonzola.jpg" alt="">
+        <img src="../assets/imgs/queijos/mussarela.webp" alt="">
+        <img src="../assets/imgs/queijos/parmesao.webp" alt="">
     </div>
     <div class="escrito-queijo">
     <label class="container_1">Gorgonzola
@@ -114,9 +114,9 @@ include "header.php";
         <p>Escolha uma carne</p>
     </div>
     <div class="carne">
-        <img src="assets/imgs/carnes/bacon.png" alt="">
-        <img src="assets/imgs/carnes/calabresa.png" alt="">
-        <img src="assets/imgs/carnes/frango.png" alt="">
+        <img src="../assets/imgs/carnes/bacon.png" alt="">
+        <img src="../assets/imgs/carnes/calabresa.png" alt="">
+        <img src="../assets/imgs/carnes/frango.png" alt="">
     </div>
     <div class="escrito-carne">
     <label class="container_1">Bacon
@@ -137,9 +137,9 @@ include "header.php";
         <p>Escolha seu complemento</p>
     </div>
     <div class="complemento">
-        <img src="assets/imgs/complementos/cebola.jpg" alt="">
-        <img src="assets/imgs/complementos/ovo.jpg" alt="">
-        <img src="assets/imgs/complementos/tomatecereja.jpg" alt="">
+        <img src="../assets/imgs/complementos/cebola.jpg" alt="">
+        <img src="../assets/imgs/complementos/ovo.jpg" alt="">
+        <img src="../assets/imgs/complementos/tomatecereja.jpg" alt="">
     </div>
     <div class="escrito-complemento2">
     <label class="container_1">Cebola
@@ -160,9 +160,9 @@ include "header.php";
         <p>Escolha sua bebida</p>
     </div>
     <div class="complemento">
-        <img src="assets/imgs/bebidas/coca.jfif" alt="">
-        <img src="assets/imgs/bebidas/fanta.webp" alt="">
-        <img src="assets/imgs/bebidas/guarana.webp" alt="">
+        <img src="../assets/imgs/bebidas/coca.jfif" alt="">
+        <img src="../assets/imgs/bebidas/fanta.webp" alt="">
+        <img src="../assets/imgs/bebidas/guarana.webp" alt="">
     </div>
     <div class="escrito-complemento1">
     <label class="container_1">Cola-cola 2L

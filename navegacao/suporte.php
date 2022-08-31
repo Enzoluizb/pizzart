@@ -72,7 +72,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST" && isset($_POST['submit'])) {
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <script src="https://kit.fontawesome.com/75cc8e2d46.js" crossorigin="anonymous"></script>
     <title><?php echo $title; ?></title>
-    <link rel="stylesheet" href="assets/css/suporte.css">
+    <link rel="stylesheet" href="../assets/css/suporte.css">
 </head>
 
 <main class="conteudo">
@@ -111,12 +111,12 @@ if ($_SERVER['REQUEST_METHOD'] == "POST" && isset($_POST['submit'])) {
                     <h2><b>CONTATO</b></h2>
                     <div class="numero">
                         <div class="numimg">
-                            <div><img class="tele" src="assets/imgs/suporte/telefone.png"></div>
+                            <div><img class="tele" src="../assets/imgs/suporte/telefone.png"></div>
                             <div>(47) 9999-9999</div>
                         </div>
                         <br>
                         <div class="numimg">
-                            <div><img class="tele" src="assets/imgs/suporte/app.png"></div>
+                            <div><img class="tele" src="../assets/imgs/suporte/app.png"></div>
                             <div>(47) 97777-6666</div>
                         </div>
                         <h2><b>LOCALIZAÇÃO</b></h2>
