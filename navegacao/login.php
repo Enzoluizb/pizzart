@@ -63,8 +63,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 <body>
     <main class="conteudo mx-auto container">
-        <section class="conteudo-principal row py-5">
-            <div class="conteudo-principal-escrito col-md-6">
+        <section class="conteudo-principal">
+            <div class="conteudo-principal-escrito">
                 <!-- <img class="conteudo-principal-imagem" src="assets/img/logo.jpg" alt=""> -->
                 <h1 class="conteudo-principal-escrito-titulo ">PIZZART</h1>
                 <h2 class="conteudo-principal-escrito-subtitulo ">Você está quase lá</h2>
@@ -80,8 +80,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                             <label for="senha">Senha:</label>
                             <input type="password" name="senha" placeholder="Email" class="rounded-3 border border-dark px-3 mb-2" value="<?php echo $senha ?>">
                             <br>
-                            <input type="submit" value="Login" name="login" class="login">
-                            <p>Não tem conta?<a href="cadUsuario.php">Clique aqui!</a></p>
+                            <input type="submit" value="Login" name="login" class="h5 w-25">
+                            <p>Não tem conta?<a href="cadUsuario.php"> Clique aqui!</a></p>
                         </fieldset>
                     </form>
                 </div>

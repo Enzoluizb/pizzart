@@ -34,11 +34,11 @@ body {
     color: rgb(0, 0, 0);
     font-weight: 400;
     font-size: 18px;
+    text-decoration: none;
 }
 
 .conteudo {
     margin-bottom: 48px;
-    border-top: 0.4px solid rgb(255, 255, 255);
 }
 
 .conteudo-principal {
@@ -361,4 +361,20 @@ div.container-a img {
     margin-bottom: 30px;
     gap: 125px;
     font-weight: 200;
+}
+
+h3 a {
+    font-size: 20px;
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+    background-color: rgb(255, 255, 255);
+    border-radius: 10px;
+}
+
+.logado {
+    font-size: 30px;
+}
+
+.sessao {
+    text-align: center;
 }

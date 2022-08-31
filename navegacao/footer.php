@@ -1,5 +1,5 @@
 <footer class="rodape">
-        <img class="rodape-imagem" src="assets/imgs/pizzartpng.png" alt="">
+        <img class="rodape-imagem" src="../assets/imgs/pizzartpng.png" alt="">
         <div class="s-m">
             <ul>
                 <a href="https://facebook.com/"><i class="fa-brands fa-facebook"></i></a>

@@ -125,13 +125,14 @@ if ($_SERVER['REQUEST_METHOD'] == "POST" && isset($_POST['submit'])) {
                             <br>
                             <input type="checkbox" name="administrador">Administrador
                             <br>
-                            <input type="submit" value="Salvar" name="submit">
+                            <input type="submit" value="Salvar" name="submit" class="h5">
+                            <br>
+                            <span><?php echo $msgErro ?></span>
                         </fieldset>
                     </form>
                 </div>
             </div>
         </section>
-        <span><?php echo $msgErro ?></span>
     </main>
 </body>
 

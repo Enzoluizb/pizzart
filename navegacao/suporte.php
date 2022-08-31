@@ -101,7 +101,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST" && isset($_POST['submit'])) {
                         <span class="obrigatorio"><?php echo $mensagemErro ?></span>
                     </div>
                     <div class="enviar">
-                        <input type="submit" value="Enviar" name="submit">
+                        <input class="h5" type="submit" value="Enviar" name="submit">
                     </div>
                 </div>
             </form>

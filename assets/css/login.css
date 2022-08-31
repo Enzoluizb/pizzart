@@ -28,6 +28,7 @@ body {
 .cabecalho-menu {
     display: flex;
     gap: 32px;
+    text-decoration: none;
 }
 
 .cabecalho-menu-item {
@@ -35,10 +36,11 @@ body {
     color: black;
     font-weight: 400;
     font-size: 18px;
+    text-decoration: none;
 }
 
 .conteudo {
-    margin-bottom: 48px;
+    margin-bottom: 100px;
 }
 
 .conteudo-principal {
@@ -83,7 +85,6 @@ body {
 }
 
 .conteudo-secundario-titulo {
-    border-top: 0.4px solid #FFF2E7;
     padding-top: 48px;
     font-family: 'Sarala', sans-serif;
     font-weight: 400;
@@ -193,12 +194,21 @@ a:hover {
     justify-content: space-around 1px;
 }
 
-.justify {
-    /* position: absolute;
-    left: 780px;
-    top: 250px; */
-}
-
 a {
     color: rgb(0, 0, 0);
+}
+
+.login-screen p a {
+    text-decoration: none;
+}
+
+.h5 {
+    background-color: rgb(0, 0, 0);
+    color: white;
+    border-radius: 10px;
+    width: 100px;
+}
+
+.conteudo {
+    margin: 200px 0px;
 }
