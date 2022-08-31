@@ -102,31 +102,27 @@ if ($_SERVER['REQUEST_METHOD'] == "POST" && isset($_POST['submit'])) {
                 <h2 class="conteudo-principal-escrito-subtitulo">Você está quase lá</h2>
             </div>
             <div class="col-md-6">
-
-                <div class="login-screen mt-5 w-100 p-3 row py-5">
-                    <form method="POST" enctype="multipart/form-data">
+                <div class="login-screen mt-5 p-3 row py-5">
+                    <form method="POST" enctype="multipart/form-data" class="form p-1 pt-5 h-75 d-inline-block w-100">
                         <fieldset>
                             <legend>Cadastro de Usuário</legend>
-
-                            Nome: <input type="text" name="nome" class="rounded-3 border border-dark px-3 mb-2" placeholder="Digite seu nome" value="<?php echo $nome ?>">
-                            <span class="obrigatorio">*<?php echo $nomeErro ?></span>
-                            <br>
-                            Email: <input type="text" name="email" class="rounded-3 border border-dark px-3 mb-2" placeholder="Digite seu email" value="<?php echo $email ?>">
-                            <span class="obrigatorio">*<?php echo $emailErro ?></span>
-                            <br>
-                            Telefone: <input type="text" name="telefone" class="rounded-3 border border-dark px-3 mb-2" placeholder="Digite seu telefone" value="<?php echo $telefone ?>">
-                            <span class="obrigatorio">*<?php echo $telefoneErro ?></span>
-                            <br>
-                            Senha: <input type="password" name="senha" class="rounded-3 border border-dark px-3 mb-2" placeholder="Digite sua senha" value="<?php echo $senha ?>">
-                            <span class="obrigatorio">*<?php echo $senhaErro ?></span>
-                            <br>
-                            Endereço: <input type="text" name="endereco" class="rounded-3 border border-dark px-3 mb-2" placeholder="Digite seu endereço" value="<?php echo $endereco ?>">
-                            <span class="obrigatorio">*<?php echo $enderecoErro ?></span>
-                            <br>
+                            <label for="email">Nome:</label>
+                            <input type="text" name="nome" class="rounded-3 border border-dark px-3 mb-2 w-75 h-25" placeholder="Digite seu nome" value="<?php echo $nome ?>">
+                            <span class="obrigatorio"><?php echo $nomeErro ?></span>
+                            <label for="email">Email:</label>
+                            <input type="text" name="email" class="rounded-3 border border-dark px-3 mb-2 w-75 h-25" placeholder="Digite seu email" value="<?php echo $email ?>">
+                            <span class="obrigatorio"><?php echo $emailErro ?></span>
+                            <label for="email">Telefone:</label>
+                            <input type="text" name="telefone" class="rounded-3 border border-dark px-3 mb-2 w-75 h-25" placeholder="Digite seu telefone" value="<?php echo $telefone ?>">
+                            <span class="obrigatorio"><?php echo $telefoneErro ?></span>
+                            <label for="email">Senha:</label>
+                            <input type="password" name="senha" class="rounded-3 border border-dark px-3 mb-2 w-75 h-25" placeholder="Digite sua senha" value="<?php echo $senha ?>">
+                            <span class="obrigatorio"><?php echo $senhaErro ?></span>
+                            <label for="email">Endereço:</label>
+                            <input type="text" name="endereco" class="rounded-3 border border-dark px-3 mb-2 w-75 h-25" placeholder="Digite seu endereço" value="<?php echo $endereco ?>">
+                            <span class="obrigatorio"><?php echo $enderecoErro ?></span>
                             <input type="checkbox" name="administrador">Administrador
-                            <br>
                             <input type="submit" value="Salvar" name="submit" class="h5">
-                            <br>
                             <span><?php echo $msgErro ?></span>
                         </fieldset>
                     </form>

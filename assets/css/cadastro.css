@@ -274,3 +274,18 @@ span {
     border-radius: 10px;
     width: 100px;
 }
+
+input {
+    border: 2px solid black;
+    font-size: 10px;
+    width: 600px;
+    text-align: left;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin: 0 auto;
+    border: solid;
+    padding: 20px;
+    margin-bottom: 10px;
+    border-radius: 50px;
+}

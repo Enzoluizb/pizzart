@@ -87,9 +87,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 </div>
             </div>
         </section>
-        <br>
     </main>
-
+    <br>
 </body>
 
 </html>
