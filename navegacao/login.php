@@ -63,7 +63,7 @@
         <fieldset>
             <legend>Login</legend>
             <label for="email">Email:</label>
-            <input type="text" name="email" value="<?php echo $email?>">
+            <input type="text" name="email" value="<?php echo $email ?>">
             <br>
             <label for="senha">Senha:</label>
             <input type="password" name="senha" value="<?php echo $senha?>">
