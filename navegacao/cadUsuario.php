@@ -102,7 +102,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST" && isset($_POST['submit'])) {
                 <h2 class="conteudo-principal-escrito-subtitulo">Você está quase lá</h2>
             </div>
             <div class="col-md-6">
-                <div class="login-screen mt-5 p-3 row py-5">
+                <div class="login-screen mt-5 row">
                     <form method="POST" enctype="multipart/form-data" class="form p-1 pt-5 h-75 d-inline-block w-100">
                         <fieldset class="fieldsetc">
                             <legend>Cadastro de Usuário</legend>
