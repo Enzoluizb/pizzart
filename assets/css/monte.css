@@ -132,10 +132,6 @@ body {
     color: transparent;
 }
 
-div.container {
-    display: inline-block;
-}
-
 div.container-a img {
     width: 11%;
     margin: 35px;

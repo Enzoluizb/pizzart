@@ -180,7 +180,7 @@ include "header.php";
     </div>
 </section>
 <div class="finalizar">
-    <input type="button" value="Finalizar pedido">
+    <a href="pedido.php"><input type="submit" value="Finalizar pedido"></a>
 </div>
 <?php
 include "footer.php";
