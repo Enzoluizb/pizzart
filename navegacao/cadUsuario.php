@@ -104,7 +104,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST" && isset($_POST['submit'])) {
             <div class="col-md-6">
                 <div class="login-screen mt-5 p-3 row py-5">
                     <form method="POST" enctype="multipart/form-data" class="form p-1 pt-5 h-75 d-inline-block w-100">
-                        <fieldset>
+                        <fieldset class="fieldsetc">
                             <legend>Cadastro de Usuário</legend>
                             <label for="email">Nome:</label>
                             <input type="text" name="nome" class="rounded-3 border border-dark px-3 mb-2 w-75 h-25" placeholder="Digite seu nome" value="<?php echo $nome ?>">

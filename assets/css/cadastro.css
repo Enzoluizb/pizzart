@@ -276,8 +276,6 @@ span {
 }
 
 input {
-    border: 2px solid black;
-    font-size: 10px;
     width: 600px;
     text-align: left;
     display: flex;
@@ -288,4 +286,9 @@ input {
     padding: 20px;
     margin-bottom: 10px;
     border-radius: 50px;
+}
+
+.fieldsetc {
+    display: flex;
+    flex-direction: column;
 }
