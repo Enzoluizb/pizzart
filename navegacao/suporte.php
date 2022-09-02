@@ -1,7 +1,7 @@
 <?php
 $title = "Pizzart | Suporte";
 include "header.php";
-
+include "../include/MySql.php";
 
 
 $nome = "";
@@ -39,13 +39,13 @@ if ($_SERVER['REQUEST_METHOD'] == "POST" && isset($_POST['submit'])) {
 
     if ($email && $nome && $mensagem && $telefone) {
         //Verificar se ja existe o email
-        $sql = $pdo->prepare("SELECT * FROM SUPORTE WHERE email = ?");
+        $sql = $pdo->prepare("SELECT * FROM suporte WHERE email = ?");
         if ($sql->execute(array($email))) {
             if ($sql->rowCount() <= 0) {
-                $sql = $pdo->prepare("INSERT INTO SUPORTE (codigo, nome, email, telefone, mensagem)
+                $sql = $pdo->prepare("INSERT INTO suporte (codigo, nome, email, telefone, mensagem)
                                                 VALUES (null, ?, ?, ?, ?)");
                 if ($sql->execute(array($nome, $email, $telefone, $mensagem))) {
-                    $msgErro = "Dados cadastrados com sucesso!";
+                    $msgErro = "Mensagem enviada com sucesso!";
                     $nome = "";
                     $email = "";
                     $telefone = "";
@@ -86,12 +86,12 @@ if ($_SERVER['REQUEST_METHOD'] == "POST" && isset($_POST['submit'])) {
                         <span class="obrigatorio"><?php echo $nomeErro ?></span>
                     </div>
                     <div class="form-contro">
-                        <label for="nome">Digite seu email:</label>
+                        <label for="email">Digite seu email:</label>
                         <input type="text" name="email" placeholder="Email" class="rounded-3 border border-dark px-3 mb-2 h5" value="<?php echo $email ?>" />
                         <span class="obrigatorio"><?php echo $emailErro ?></span>
                     </div>
                     <div class="form-contro">
-                        <label for="idade">Digite seu telefone:</label>
+                        <label for="telefone">Digite seu telefone:</label>
                         <input type="text" name="telefone" placeholder="Número com DDD" class="rounded-3 border border-dark px-3 mb-2 h5" value="<?php echo $telefone ?>">
                         <span class="obrigatorio"><?php echo $telefoneErro ?></span>
                     </div>
@@ -99,6 +99,9 @@ if ($_SERVER['REQUEST_METHOD'] == "POST" && isset($_POST['submit'])) {
                         <label for="mensagem">Digite sua mensagem:</label>
                         <input type="text" name="mensagem" placeholder="Escreva sua mensagem" class="rounded-3 border border-dark px-3 mb-2 h5" value="<?php echo $mensagem ?>">
                         <span class="obrigatorio"><?php echo $mensagemErro ?></span>
+                    </div>
+                    <div>
+                        <?php echo $msgErro?>
                     </div>
                     <div class="enviar">
                         <input class="h5" type="submit" value="Enviar" name="submit">
