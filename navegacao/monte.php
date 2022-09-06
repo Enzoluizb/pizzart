@@ -1,6 +1,7 @@
 <?php
 $title = "Pizzart | Monte sua Pizza";
 include "header.php";
+include "../include/MySql.php";
 ?>
 
 
@@ -21,167 +22,179 @@ include "header.php";
                 pedido"</em></p>
     </section>
 </main>
-<section>
-    <div class="nome">
-        <h1>MASSA</h1>
-        <p>Escolha uma opção</p>
-    </div>
-    <div class="massa"> 
-        <img src="../assets/imgs/massas/tradicional.jpg" alt="">
-        <img src="../assets/imgs/massas/integral.jpg" alt="">
-    </div>
-    <div class="escrito-massa">
-        <label class="container_1">Tradicional
-            <input type="checkbox" checked="checked">
-            <span class="checkmark"></span>
-        </label>
-        <label class="container_1">Integral
-            <input type="checkbox" checked="checked">
-            <span class="checkmark"></span>
-        </label>
-    </div>
-    <div class="nome">
-        <h1>TAMANHO</h1>
-        <p>Escolha o tamanho</p>
-    </div>
-    <div class="tamanho">
-        <img src="../assets/imgs/tamanho/20CM.png" alt="">
-        <img src="../assets/imgs/tamanho/30CM.png" alt="">
-        <img src="../assets/imgs/tamanho/40CM.png" alt="">
-    </div>
-    <div class="escrito-tamanho">
-        <label class="container_1">Pequena
-            <input type="checkbox" checked="checked">
-            <span class="checkmark"></span>
-        </label>
-        <label class="container_1">Média
-            <input type="checkbox" checked="checked">
-            <span class="checkmark"></span>
-        </label>
-        <label class="container_1">Grande
-            <input type="checkbox" checked="checked">
-            <span class="checkmark"></span>
-        </label>
-    </div>
-    <div class="nome">
-        <h1>MOLHO</h1>
-        <p>Escolha seu molho</p>
-    </div>
-    <div class="molho">
-        <img src="../assets/imgs/molho/tomate.png" alt="">
-        <img src="../assets/imgs/molho/pimenta.png" alt="">
-        <img src="../assets/imgs/molho/pesto.png" alt="">
-    </div>
-    <div class="escrito-molho">
-        <label class="container_1">Tomate
-            <input type="checkbox" checked="checked">
-            <span class="checkmark"></span>
-        </label>
-        <label class="container_1">Pimenta
-            <input type="checkbox" checked="checked">
-            <span class="checkmark"></span>
-        </label>
-        <label class="container_1">Pesto
-            <input type="checkbox" checked="checked">
-            <span class="checkmark"></span>
-        </label>
-    </div>
-    <div class="nome">
-        <h1>QUEIJOS</h1>
-        <p>Escolha um queijo</p>
-    </div>
-    <div class="queijo">
-        <img src="../assets/imgs/queijos/gorgonzola.jpg" alt="">
-        <img src="../assets/imgs/queijos/mussarela.webp" alt="">
-        <img src="../assets/imgs/queijos/parmesao.webp" alt="">
-    </div>
-    <div class="escrito-queijo">
-    <label class="container_1">Gorgonzola
-            <input type="checkbox" checked="checked">
-            <span class="checkmark"></span>
-        </label>
-        <label class="container_1">Mussarela
-            <input type="checkbox" checked="checked">
-            <span class="checkmark"></span>
-        </label>
-        <label class="container_1">Parmesão
-            <input type="checkbox" checked="checked">
-            <span class="checkmark"></span>
-        </label>
-    </div>
-    <div class="nome">
-        <h1>CARNES</h1>
-        <p>Escolha uma carne</p>
-    </div>
-    <div class="carne">
-        <img src="../assets/imgs/carnes/bacon.png" alt="">
-        <img src="../assets/imgs/carnes/calabresa.png" alt="">
-        <img src="../assets/imgs/carnes/frango.png" alt="">
-    </div>
-    <div class="escrito-carne">
-    <label class="container_1">Bacon
-            <input type="checkbox" checked="checked">
-            <span class="checkmark"></span>
-        </label>
-        <label class="container_1">Calabresa
-            <input type="checkbox" checked="checked">
-            <span class="checkmark"></span>
-        </label>
-        <label class="container_1">Frango
-            <input type="checkbox" checked="checked">
-            <span class="checkmark"></span>
-        </label>
-    </div>
-    <div class="nome">
-        <h1>COMPLEMENTOS</h1>
-        <p>Escolha seu complemento</p>
-    </div>
-    <div class="complemento">
-        <img src="../assets/imgs/complementos/cebola.jpg" alt="">
-        <img src="../assets/imgs/complementos/ovo.jpg" alt="">
-        <img src="../assets/imgs/complementos/tomatecereja.jpg" alt="">
-    </div>
-    <div class="escrito-complemento2">
-    <label class="container_1">Cebola
-            <input type="checkbox" checked="checked">
-            <span class="checkmark"></span>
-        </label>
-        <label class="container_1">Ovo
-            <input type="checkbox" checked="checked">
-            <span class="checkmark"></span>
-        </label>
-        <label class="container_1">Tomate
-            <input type="checkbox" checked="checked">
-            <span class="checkmark"></span>
-        </label>
-    </div>
-    <div class="nome">
-        <h1>BEBIDAS</h1>
-        <p>Escolha sua bebida</p>
-    </div>
-    <div class="complemento">
-        <img src="../assets/imgs/bebidas/coca.jfif" alt="">
-        <img src="../assets/imgs/bebidas/fanta.webp" alt="">
-        <img src="../assets/imgs/bebidas/guarana.webp" alt="">
-    </div>
-    <div class="escrito-complemento1">
-    <label class="container_1">Cola-cola 2L
-            <input type="checkbox" checked="checked">
-            <span class="checkmark"></span>
-        </label>
-        <label class="container_1">Fanta 2L
-            <input type="checkbox" checked="checked">
-            <span class="checkmark"></span>
-        </label>
-        <label class="container_1">Guaraná 2L
-            <input type="checkbox" checked="checked">
-            <span class="checkmark"></span>
-        </label>
-    </div>
-</section>
-<div class="finalizar">
-    <a href="pedido.php"><input type="submit" value="Finalizar pedido"></a>
-</div>
+<form action="pedido.php" method="POST">
+    <section>
+        <div class="nome">
+            <h1>MASSA</h1>
+            <p>Escolha uma opção</p>
+        </div>
+        <div class="massa">
+        </div>
+        <div class="escrito-massa">
+            <div class="ui radio checkbox">
+                <label for="massa_trad">
+                    <img src="../assets/imgs/massas/tradicional.jpg" alt="">
+                    Tradicional
+                </label>
+                <input type="radio" name="tipo_massa" value="Tradicional" id="massa_trad">
+            </div>
+            <div class="ui radio checkbox">
+                <label for="massa_int">
+                    <img src="../assets/imgs/massas/integral.jpg" alt="">
+                    Integral
+                </label>
+                <input type="radio" name="tipo_massa" value="Integral" id="massa_int">
+            </div>
+        </div>
+        <div class="nome">
+            <h1>TAMANHO</h1>
+            <p>Escolha o tamanho</p>
+        </div>
+        <div class="escrito-tamanho">
+            <div class="ui radio checkbox">
+                <label for="massa_peq">
+                    <img src="../assets/imgs/tamanho/20CM.png" alt="">
+                    Pequena</label>
+                <input type="radio" name="tipo_tamanho" value="Pequena" id="massa_peq">
+            </div>
+            <div class="ui radio checkbox">
+                <label for="massa_med">
+                    <img src="../assets/imgs/tamanho/30CM.png" alt="">
+                    Média</label>
+                <input type="radio" name="tipo_tamanho" value="Média" id="massa_med">
+            </div>
+            <div class="ui radio checkbox">
+                <label for="massa_gra">
+                    <img src="../assets/imgs/tamanho/40CM.png" alt="">
+                    Grande</label>
+                <input type="radio" name="tipo_tamanho" value="Grande" id="massa_gra">
+            </div>
+        </div>
+        <div class="nome">
+            <h1>MOLHO</h1>
+            <p>Escolha seu molho</p>
+        </div>
+        <div class="escrito-molho">
+            <div class="ui radio checkbox">
+                <label for="molho_tom">
+                    <img src="../assets/imgs/molho/tomate.png" alt="">
+                    Tomate</label>
+                <input type="radio" name="tipo_molho" value="Tomate" id="molho_tom">
+            </div>
+            <div class="ui radio checkbox">
+                <label for="molho_pim">
+                    <img src="../assets/imgs/molho/pimenta.png" alt="">
+                    Pimenta</label>
+                <input type="radio" name="tipo_molho" value="Pimenta" id="molho_pim">
+            </div>
+            <div class="ui radio checkbox">
+                <label for="molho_pes">
+                    <img src="../assets/imgs/molho/pesto.png" alt="">
+                    Pimenta</label>
+                <input type="radio" name="tipo_molho" value="Pesto" id="molho_pes">
+            </div>
+        </div>
+        <div class="nome">
+            <h1>QUEIJOS</h1>
+            <p>Escolha um queijo</p>
+        </div>
+        <div class="escrito-queijo">
+            <div class="ui radio checkbox">
+                <label for="queijo_gor">
+                    <img src="../assets/imgs/queijos/gorgonzola.jpg" alt="">
+                    Gorgonzola</label>
+                <input type="radio" name="tipo_queijo" value="Gorgonzola" id="queijo_gor">
+            </div>
+            <div class="ui radio checkbox">
+                <label for="queijo_mus">
+                    <img src="../assets/imgs/queijos/mussarela.webp" alt="">
+                    Mussarela</label>
+                <input type="radio" name="tipo_queijo" value="Mussarela" id="queijo_mus">
+            </div>
+            <div class="ui radio checkbox">
+                <label for="queijo_par">
+                    <img src="../assets/imgs/queijos/parmesao.webp" alt="">
+                    Parmesão</label>
+                <input type="radio" name="tipo_queijo" value="Parmesão" id="queijo_par">
+            </div>
+        </div>
+        <div class="nome">
+            <h1>CARNES</h1>
+            <p>Escolha uma carne</p>
+        </div>
+        <div class="escrito-carne">
+            <div class="ui radio checkbox">
+                <label for="carne_bac">
+                    <img src="../assets/imgs/carnes/bacon.png" alt="">
+                    Bacon</label>
+                <input type="radio" name="tipo_carne" value="Bacon" id="carne_bac">
+            </div>
+            <div class="ui radio checkbox">
+                <label for="carne_cal">
+                    <img src="../assets/imgs/carnes/calabresa.png" alt="">
+                    Calabresa</label>
+                <input type="radio" name="tipo_carne" value="Calabresa" id="carne_cal">
+            </div>
+            <div class="ui radio checkbox">
+                <label for="carne_fra">
+                    <img src="../assets/imgs/carnes/frango.png" alt="">
+                    Frango</label>
+                <input type="radio" name="tipo_carne" value="Frango" id="carne_fra">
+            </div>
+        </div>
+        <div class="nome">
+            <h1>COMPLEMENTOS</h1>
+            <p>Escolha um complemento</p>
+        </div>
+        <div class="escrito-carne">
+            <div class="ui radio checkbox">
+                <label for="complemento_ceb">
+                    <img src="../assets/imgs/complementos/cebola.jpg" alt="">
+                    Cebola</label>
+                <input type="radio" name="tipo_complemento" value="Cebola" id="complemento_ceb">
+            </div>
+            <div class="ui radio checkbox">
+                <label for="complemento_ovo">
+                    <img src="../assets/imgs/complementos/ovo.jpg" alt="">
+                    Ovo</label>
+                <input type="radio" name="tipo_complemento" value="Ovo" id="complemento_ovo">
+            </div>
+            <div class="ui radio checkbox">
+                <label for="complemento_tomatecereja">
+                    <img src="../assets/imgs/complementos/tomatecereja.jpg" alt="">
+                    Tomate cereja</label>
+                <input type="radio" name="tipo_complemento" value="Tomate Cereja" id="complemento_tomatecereja">
+            </div>
+        </div>
+        <div class="nome">
+            <h1>Bebidas</h1>
+            <p>Escolha uma bebida</p>
+        </div>
+        <div class="escrito-carne">
+            <div class="ui radio checkbox">
+                <label for="bebida_coca">
+                    <img src="../assets/imgs/bebidas/coca.jfif" alt="">
+                    COCA-COLA 2L</label>
+                <input type="radio" name="tipo_bebida" value="COCA-COLA 2L" id="bebida_coca">
+            </div>
+            <div class="ui radio checkbox">
+                <label for="bebida_fanta">
+                    <img src="../assets/imgs/bebidas/fanta.webp" alt="">
+                    FANTA 2L</label>
+                <input type="radio" name="tipo_bebida" value="FANTA 2L" id="bebida_fanta">
+            </div>
+            <div class="ui radio checkbox">
+                <label for="bebida_guarana">
+                    <img src="../assets/imgs/bebidas/guarana.webp" alt="">
+                    GUARANÁ 2L</label>
+                <input type="radio" name="tipo_bebida" value="GUARANÁ 2L" id="bebida_guarana">
+            </div>
+        </div>
+        <div class="finalizar">
+            <input type="submit" value="Finalizar pedido">
+        </div>
+    </section>
+</form>
 <?php
 include "footer.php";
 ?>

@@ -151,14 +151,7 @@ div.container-a img {
     margin: 0;
 }
 
-.massa {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 20px;
-}
-
-.massa img {
+.escrito-massa img {
     max-width: 150px;
     border-radius: 360px;
 }
@@ -172,14 +165,7 @@ div.container-a img {
     font-weight: 200;
 }
 
-.tamanho {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 20px;
-}
-
-.tamanho img {
+.escrito-tamanho img {
     max-width: 150px;
     border-radius: 360px;
     margin-top: 30px;
@@ -194,14 +180,7 @@ div.container-a img {
     font-weight: 200;
 }
 
-.molho {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 20px;
-}
-
-.molho img {
+.escrito-molho img {
     max-width: 150px;
     border-radius: 360px;
     margin-top: 30px;
@@ -216,14 +195,7 @@ div.container-a img {
     font-weight: 200;
 }
 
-.queijo {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 20px;
-}
-
-.queijo img {
+.escrito-queijo img {
     max-width: 150px;
     border-radius: 360px;
     margin-top: 30px;
@@ -234,18 +206,11 @@ div.container-a img {
     display: flex;
     justify-content: center;
     margin-top: 10px;
-    gap: 100px;
+    gap: 130px;
     font-weight: 200;
 }
 
-.carne {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 20px;
-}
-
-.carne img {
+.escrito-carne img {
     max-width: 150px;
     border-radius: 360px;
     margin-top: 30px;
@@ -260,14 +225,7 @@ div.container-a img {
     font-weight: 200;
 }
 
-.complemento {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 20px;
-}
-
-.complemento img {
+.escrito-complemento img {
     max-width: 150px;
     border-radius: 360px;
     margin-top: 30px;
