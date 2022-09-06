@@ -32,18 +32,18 @@ include "../include/MySql.php";
         </div>
         <div class="escrito-massa">
             <div class="ui radio checkbox">
-                <label for="massa_trad">
+                <label for="massa_trad" style="display: flex;flex-direction: column; align-items: center;">
                     <img src="../assets/imgs/massas/tradicional.jpg" alt="">
-                    Tradicional
+                    <p>Tradicional</p>
+                    <input type="radio" name="tipo_massa" value="Tradicional" id="massa_trad" style="margin-top: -16px;">
                 </label>
-                <input type="radio" name="tipo_massa" value="Tradicional" id="massa_trad">
             </div>
             <div class="ui radio checkbox">
-                <label for="massa_int">
+                <label for="massa_int" style="display: flex;flex-direction: column; align-items: center;">
                     <img src="../assets/imgs/massas/integral.jpg" alt="">
-                    Integral
+                    <p>Integral</p>
+                    <input type="radio" name="tipo_massa" value="Integral" id="massa_int" style="margin-top: -16px;">
                 </label>
-                <input type="radio" name="tipo_massa" value="Integral" id="massa_int">
             </div>
         </div>
         <div class="nome">
@@ -52,22 +52,26 @@ include "../include/MySql.php";
         </div>
         <div class="escrito-tamanho">
             <div class="ui radio checkbox">
-                <label for="massa_peq">
+                <label for="massa_peq" style="display: flex;flex-direction: column; align-items: center;">
                     <img src="../assets/imgs/tamanho/20CM.png" alt="">
-                    Pequena</label>
-                <input type="radio" name="tipo_tamanho" value="Pequena" id="massa_peq">
+                    <p>Pequena</p>
+                    <input type="radio" name="tipo_tamanho" value="Pequena" id="massa_peq" style="margin-top: -16px;">
+                </label>
             </div>
             <div class="ui radio checkbox">
-                <label for="massa_med">
+                <label for="massa_med" style="display: flex;flex-direction: column; align-items: center;">
                     <img src="../assets/imgs/tamanho/30CM.png" alt="">
-                    Média</label>
-                <input type="radio" name="tipo_tamanho" value="Média" id="massa_med">
+                    <p>Média</p>
+                    <input type="radio" name="tipo_tamanho" value="Média" id="massa_med" style="margin-top: -16px;">
+                </label>
+
             </div>
             <div class="ui radio checkbox">
-                <label for="massa_gra">
+                <label for="massa_gra" style="display: flex;flex-direction: column; align-items: center;">
                     <img src="../assets/imgs/tamanho/40CM.png" alt="">
-                    Grande</label>
-                <input type="radio" name="tipo_tamanho" value="Grande" id="massa_gra">
+                    <p>Grande</p>
+                    <input type="radio" name="tipo_tamanho" value="Grande" id="massa_gra" style="margin-top: -16px;">
+                </label>
             </div>
         </div>
         <div class="nome">
@@ -76,22 +80,26 @@ include "../include/MySql.php";
         </div>
         <div class="escrito-molho">
             <div class="ui radio checkbox">
-                <label for="molho_tom">
+                <label for="molho_tom" style="display: flex;flex-direction: column; align-items: center;">
                     <img src="../assets/imgs/molho/tomate.png" alt="">
-                    Tomate</label>
-                <input type="radio" name="tipo_molho" value="Tomate" id="molho_tom">
+                    <p>Tomate</p>
+                    <input type="radio" name="tipo_molho" value="Tomate" id="molho_tom" style="margin-top: -16px;">
+                </label>
             </div>
             <div class="ui radio checkbox">
-                <label for="molho_pim">
+                <label for="molho_pim" style="display: flex;flex-direction: column; align-items: center;">
                     <img src="../assets/imgs/molho/pimenta.png" alt="">
-                    Pimenta</label>
-                <input type="radio" name="tipo_molho" value="Pimenta" id="molho_pim">
+                    <p>Pimenta</p>
+                    <input type="radio" name="tipo_molho" value="Pimenta" id="molho_pim" style="margin-top: -16px;">
+                </label>
+
             </div>
             <div class="ui radio checkbox">
-                <label for="molho_pes">
+                <label for="molho_pes" style="display: flex;flex-direction: column; align-items: center;">
                     <img src="../assets/imgs/molho/pesto.png" alt="">
-                    Pimenta</label>
-                <input type="radio" name="tipo_molho" value="Pesto" id="molho_pes">
+                    <p>Pesto</p>
+                    <input type="radio" name="tipo_molho" value="Pesto" id="molho_pes" style="margin-top: -16px;">
+                </label>
             </div>
         </div>
         <div class="nome">
@@ -100,22 +108,26 @@ include "../include/MySql.php";
         </div>
         <div class="escrito-queijo">
             <div class="ui radio checkbox">
-                <label for="queijo_gor">
+                <label for="queijo_gor" style="display: flex;flex-direction: column; align-items: center;">
                     <img src="../assets/imgs/queijos/gorgonzola.jpg" alt="">
-                    Gorgonzola</label>
-                <input type="radio" name="tipo_queijo" value="Gorgonzola" id="queijo_gor">
+                    <p>Gorgonzola</p>
+                    <input type="radio" name="tipo_queijo" value="Gorgonzola" id="queijo_gor" style="margin-top: -16px;">
+                </label>
             </div>
             <div class="ui radio checkbox">
-                <label for="queijo_mus">
+                <label for="queijo_mus" style="display: flex;flex-direction: column; align-items: center;">
                     <img src="../assets/imgs/queijos/mussarela.webp" alt="">
-                    Mussarela</label>
-                <input type="radio" name="tipo_queijo" value="Mussarela" id="queijo_mus">
+                    <p>Mussarela</p>
+                    <input type="radio" name="tipo_queijo" value="Mussarela" id="queijo_mus" style="margin-top: -16px;">
+                </label>
+
             </div>
             <div class="ui radio checkbox">
-                <label for="queijo_par">
+                <label for="queijo_par" style="display: flex;flex-direction: column; align-items: center;">
                     <img src="../assets/imgs/queijos/parmesao.webp" alt="">
-                    Parmesão</label>
-                <input type="radio" name="tipo_queijo" value="Parmesão" id="queijo_par">
+                    <p>Parmesão</p>
+                    <input type="radio" name="tipo_queijo" value="Parmesão" id="queijo_par" style="margin-top: -16px;">
+                </label>
             </div>
         </div>
         <div class="nome">
@@ -124,22 +136,25 @@ include "../include/MySql.php";
         </div>
         <div class="escrito-carne">
             <div class="ui radio checkbox">
-                <label for="carne_bac">
+                <label for="carne_bac" style="display: flex;flex-direction: column; align-items: center;">
                     <img src="../assets/imgs/carnes/bacon.png" alt="">
-                    Bacon</label>
-                <input type="radio" name="tipo_carne" value="Bacon" id="carne_bac">
+                    <p>Bacon</p>
+                    <input type="radio" name="tipo_carne" value="Bacon" id="carne_bac" style="margin-top: -16px;"> 
+                </label>
             </div>
             <div class="ui radio checkbox">
-                <label for="carne_cal">
+                <label for="carne_cal" style="display: flex;flex-direction: column; align-items: center;">
                     <img src="../assets/imgs/carnes/calabresa.png" alt="">
-                    Calabresa</label>
-                <input type="radio" name="tipo_carne" value="Calabresa" id="carne_cal">
+                    <p>Calabresa</p>
+                    <input type="radio" name="tipo_carne" value="Calabresa" id="carne_cal" style="margin-top: -16px;">
+                </label>
             </div>
             <div class="ui radio checkbox">
-                <label for="carne_fra">
+                <label for="carne_fra" style="display: flex;flex-direction: column; align-items: center;">
                     <img src="../assets/imgs/carnes/frango.png" alt="">
-                    Frango</label>
-                <input type="radio" name="tipo_carne" value="Frango" id="carne_fra">
+                    <p>Frango</p>
+                    <input type="radio" name="tipo_carne" value="Frango" id="carne_fra" style="margin-top: -16px;">
+                </label>
             </div>
         </div>
         <div class="nome">
@@ -148,22 +163,25 @@ include "../include/MySql.php";
         </div>
         <div class="escrito-carne">
             <div class="ui radio checkbox">
-                <label for="complemento_ceb">
+                <label for="complemento_ceb" style="display: flex;flex-direction: column; align-items: center;">
                     <img src="../assets/imgs/complementos/cebola.jpg" alt="">
-                    Cebola</label>
-                <input type="radio" name="tipo_complemento" value="Cebola" id="complemento_ceb">
+                    <p>Cebola</p>
+                    <input type="radio" name="tipo_complemento" value="Cebola" id="complemento_ceb" style="margin-top: -16px;">
+                </label>
             </div>
             <div class="ui radio checkbox">
-                <label for="complemento_ovo">
+                <label for="complemento_ovo" style="display: flex;flex-direction: column; align-items: center;">
                     <img src="../assets/imgs/complementos/ovo.jpg" alt="">
-                    Ovo</label>
-                <input type="radio" name="tipo_complemento" value="Ovo" id="complemento_ovo">
+                    <p>Ovo</p>
+                    <input type="radio" name="tipo_complemento" value="Ovo" id="complemento_ovo" style="margin-top: -16px;">
+                </label>
             </div>
             <div class="ui radio checkbox">
-                <label for="complemento_tomatecereja">
+                <label for="complemento_tomatecereja" style="display: flex;flex-direction: column; align-items: center;">
                     <img src="../assets/imgs/complementos/tomatecereja.jpg" alt="">
-                    Tomate cereja</label>
-                <input type="radio" name="tipo_complemento" value="Tomate Cereja" id="complemento_tomatecereja">
+                    <p>Tomate Cereja</p>
+                    <input type="radio" name="tipo_complemento" value="Tomate Cereja" id="complemento_tomatecereja" style="margin-top: -16px;">
+                </label>
             </div>
         </div>
         <div class="nome">
@@ -172,22 +190,25 @@ include "../include/MySql.php";
         </div>
         <div class="escrito-carne">
             <div class="ui radio checkbox">
-                <label for="bebida_coca">
+                <label for="bebida_coca" style="display: flex;flex-direction: column; align-items: center;">
                     <img src="../assets/imgs/bebidas/coca.jfif" alt="">
-                    COCA-COLA 2L</label>
-                <input type="radio" name="tipo_bebida" value="COCA-COLA 2L" id="bebida_coca">
+                    <p>COCA-COLA 2L</p>
+                    <input type="radio" name="tipo_bebida" value="COCA-COLA 2L" id="bebida_coca" style="margin-top: -16px;">
+                </label>
             </div>
             <div class="ui radio checkbox">
-                <label for="bebida_fanta">
+                <label for="bebida_fanta" style="display: flex;flex-direction: column; align-items: center;">
                     <img src="../assets/imgs/bebidas/fanta.webp" alt="">
-                    FANTA 2L</label>
-                <input type="radio" name="tipo_bebida" value="FANTA 2L" id="bebida_fanta">
+                    <p>FANTA 2L</p>
+                    <input type="radio" name="tipo_bebida" value="FANTA 2L" id="bebida_fanta" style="margin-top: -16px;">
+                </label>
             </div>
             <div class="ui radio checkbox">
-                <label for="bebida_guarana">
+                <label for="bebida_guarana" style="display: flex;flex-direction: column; align-items: center;">
                     <img src="../assets/imgs/bebidas/guarana.webp" alt="">
-                    GUARANÁ 2L</label>
-                <input type="radio" name="tipo_bebida" value="GUARANÁ 2L" id="bebida_guarana">
+                    <p>GUARANÁ 2L</p>
+                    <input type="radio" name="tipo_bebida" value="GUARANÁ 2L" id="bebida_guarana" style="margin-top: -16px;">
+                </label>
             </div>
         </div>
         <div class="finalizar">
@@ -195,6 +216,7 @@ include "../include/MySql.php";
         </div>
     </section>
 </form>
+
 <?php
 include "footer.php";
 ?>

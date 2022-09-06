@@ -55,7 +55,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST" && isset($_POST['submit'])) {
         $sql = $pdo->prepare("SELECT * FROM USUARIO WHERE email = ?");
         if ($sql->execute(array($email))) {
             if ($sql->rowCount() <= 0) {
-                $sql = $pdo->prepare("INSERT INTO USUARIO (codigo, nome, email, telefone, senha, endereco, administrador)
+                $sql = $pdo->prepare("INSERT INTO USUARIO (idusuario, nome, email, telefone, senha, endereco, administrador)
                                                 VALUES (null, ?, ?, ?, ?, ?, ?)");
                 if ($sql->execute(array($nome, $email, $telefone, md5($senha), $endereco, $administrador))) {
                     $msgErro = "Dados cadastrados com sucesso!";
