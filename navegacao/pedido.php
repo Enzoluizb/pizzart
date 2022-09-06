@@ -30,30 +30,30 @@ include "header.php";
 
 $valor =  0;
 if ($_POST['tipo_massa'] == 'Tradicional') {
-    $valor = $valor + 5;
+    $valor = $valor + 10;
 }
 if ($_POST['tipo_massa'] == 'Integral') {
-    $valor = $valor + 10;
+    $valor = $valor + 15;
 }
 
 if ($_POST['tipo_tamanho'] == 'Pequena') {
-    $valor = $valor + 10;
+    $valor = $valor + 20;
 }
 if ($_POST['tipo_tamanho'] == 'Média') {
-    $valor = $valor + 15;
+    $valor = $valor + 30;
 }
 if ($_POST['tipo_tamanho'] == 'Grande') {
-    $valor = $valor + 20;
+    $valor = $valor + 40;
 }
 
 if ($_POST['tipo_molho'] == 'Tomate') {
-    $valor = $valor + 5;
+    $valor = $valor + 10;
 }
 if ($_POST['tipo_molho'] == 'Pimenta') {
-    $valor = $valor + 5;
+    $valor = $valor + 10;
 }
 if ($_POST['tipo_molho'] == 'Pesto') {
-    $valor = $valor + 10;
+    $valor = $valor + 15;
 }
 
 if ($_POST['tipo_queijo'] == 'Gorgonzola') {
@@ -67,7 +67,7 @@ if ($_POST['tipo_queijo'] == 'Parmesão') {
 }
 
 if ($_POST['tipo_carne'] == 'Bacon') {
-    $valor = $valor + 10;
+    $valor = $valor + 15;
 }
 if ($_POST['tipo_carne'] == 'Calabresa') {
     $valor = $valor + 10;
@@ -77,10 +77,10 @@ if ($_POST['tipo_carne'] == 'Frango') {
 }
 
 if ($_POST['tipo_complemento'] == 'Cebola') {
-    $valor = $valor + 5;
+    $valor = $valor + 10;
 }
 if ($_POST['tipo_complemento'] == 'Ovo') {
-    $valor = $valor + 5;
+    $valor = $valor + 10;
 }
 if ($_POST['tipo_complemento'] == 'Tomate Cereja') {
     $valor = $valor + 10;
