@@ -3,12 +3,13 @@ $title = "Pizzart | Finalizar pedido";
 include "header.php";
 
 
-print_r($_POST);
-
+// echo '<pre>';
+// print_r($_POST);
+// echo '</pre>';
 
 ?>
 
-<head>
+<!-- <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -16,9 +17,88 @@ print_r($_POST);
     <title><?php echo $title; ?></title>
     <link rel="stylesheet" href="../assets/css/pedido.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
-</head>
+</head> -->
+
+<div>Você escolheu o massa: <?php echo $_POST['tipo_massa'] ?></div>
+<div>Você escolheu o tamanho: <?php echo $_POST['tipo_tamanho'] ?></div>
+<div>Você escolheu o molho: <?php echo $_POST['tipo_molho'] ?></div>
+<div>Você escolheu o queijo: <?php echo $_POST['tipo_queijo'] ?></div>
+<div>Você escolheu a carne: <?php echo $_POST['tipo_carne'] ?></div>
+<div>Você escolheu o complemento: <?php echo $_POST['tipo_complemento'] ?></div>
+<div>Você escolheu a bebida: <?php echo $_POST['tipo_bebida'] ?></div>
+<?php
+
+$valor =  0;
+if ($_POST['tipo_massa'] == 'Tradicional') {
+    $valor = $valor + 5;
+}
+if ($_POST['tipo_massa'] == 'Integral') {
+    $valor = $valor + 10;
+}
+
+if ($_POST['tipo_tamanho'] == 'Pequena') {
+    $valor = $valor + 10;
+}
+if ($_POST['tipo_tamanho'] == 'Média') {
+    $valor = $valor + 15;
+}
+if ($_POST['tipo_tamanho'] == 'Grande') {
+    $valor = $valor + 20;
+}
+
+if ($_POST['tipo_molho'] == 'Tomate') {
+    $valor = $valor + 5;
+}
+if ($_POST['tipo_molho'] == 'Pimenta') {
+    $valor = $valor + 5;
+}
+if ($_POST['tipo_molho'] == 'Pesto') {
+    $valor = $valor + 10;
+}
+
+if ($_POST['tipo_queijo'] == 'Gorgonzola') {
+    $valor = $valor + 15;
+}
+if ($_POST['tipo_queijo'] == 'Mussarela') {
+    $valor = $valor + 10;
+}
+if ($_POST['tipo_queijo'] == 'Parmesão') {
+    $valor = $valor + 10;
+}
+
+if ($_POST['tipo_carne'] == 'Bacon') {
+    $valor = $valor + 10;
+}
+if ($_POST['tipo_carne'] == 'Calabresa') {
+    $valor = $valor + 10;
+}
+if ($_POST['tipo_carne'] == 'Frango') {
+    $valor = $valor + 10;
+}
+
+if ($_POST['tipo_complemento'] == 'Cebola') {
+    $valor = $valor + 5;
+}
+if ($_POST['tipo_complemento'] == 'Ovo') {
+    $valor = $valor + 5;
+}
+if ($_POST['tipo_complemento'] == 'Tomate Cereja') {
+    $valor = $valor + 10;
+}
+
+if ($_POST['tipo_bebida'] == 'COCA-COLA 2L') {
+    $valor = $valor + 12;
+}
+if ($_POST['tipo_bebida'] == 'COCA-COLA 2L') {
+    $valor = $valor + 12;
+}
+if ($_POST['tipo_bebida'] == 'COCA-COLA 2L') {
+    $valor = $valor + 12;
+}
 
 
+?>
+Preço total: <?php echo $valor; ?>
 <?php
 include "footer.php";
 ?>
