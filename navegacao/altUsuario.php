@@ -68,7 +68,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST" && isset($_POST['submit'])) {
                     $sql = $pdo->prepare("UPDATE USUARIO SET idusuario=?,nome=?,email=?,telefone=?,senha=?, administrador=? WHERE idusuario=?");
                     if ($sql->execute(array($idusuario, $nome, $email, $telefone, md5($senha), $administrador, $idusuario))) {
                         $msgErro = "Dados alterados com sucesso!";
-                        header('location:altUsuario.php');
+                        header('location:listUsuarios.php');
                     } else {
                         $msgErro = "Dados não cadastrados!";
                     }
