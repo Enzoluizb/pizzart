@@ -1,7 +1,7 @@
 <?php
 $title = "Pizzart | Lista de Usuários";
 include "header.php";
-include "../include/MySql.php";
+include "../include/mysql.php";
 
 $sql = $pdo->prepare('SELECT * FROM usuario');
 if ($sql->execute()) {

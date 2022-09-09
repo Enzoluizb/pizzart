@@ -1,11 +1,11 @@
 <?php
 
-include "../include/MySql.php";
+include "../include/mysql.php";
 $msgErro = "";
 $idusuario = "";
 
 if (isset($_GET["id"])) {
-    $codigo = $_GET['id'];
+    $idusuario = $_GET['id'];
     $sql = $pdo->prepare("DELETE FROM usuario WHERE idusuario = ?");
     if ($sql->execute(array($idusuario))) {
         if ($sql->rowCount() > 0) {

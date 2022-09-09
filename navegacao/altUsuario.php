@@ -7,6 +7,7 @@ $nome = "";
 $email = "";
 $telefone = "";
 $senha = "";
+$imgContent = "";
 $administrador = "";
 
 $nomeErro = "";
@@ -16,12 +17,12 @@ $senhaErro = "";
 $msgErro = "";
 
 if (isset($_GET['id'])) {
-    $codigo = $_GET['id'];
-    $sql = $pdo->prepare("SELECT * FROM usuario WHERE idusuario = ?");
+    $idusuario = $_GET['id'];
+    $sql = $pdo->prepare("SELECT * FROM USUARIO WHERE idusuario = ?");
     if ($sql->execute(array($idusuario))) {
         $info = $sql->fetchAll(PDO::FETCH_ASSOC);
         foreach ($info as $key => $value) {
-            $codigo = $value['codigo'];
+            $idusuario = $value['idusuario'];
             $nome = $value['nome'];
             $email = $value['email'];
             $telefone = $value['telefone'];
@@ -60,17 +61,11 @@ if ($_SERVER['REQUEST_METHOD'] == "POST" && isset($_POST['submit'])) {
 
     if ($email && $nome && $senha && $telefone) {
         //Verificar se ja existe o email
-        $sql = $pdo->prepare("SELECT * FROM usuario WHERE email = ? AND idusuario <> ?");
+        $sql = $pdo->prepare("SELECT * FROM USUARIO WHERE email = ? AND idusuario <> ?");
         if ($sql->execute(array($email, $idusuario))) {
             if ($sql->rowCount() <= 0) {
                 if ($email && $nome && $senha && $telefone) {
-                    $sql = $pdo->prepare("UPDATE usuario SET idusuario=?,
-                                                             nome=?, 
-                                                             email=?,
-                                                             telefone=?, 
-                                                             senha=?, 
-                                                             administrador=?, 
-                                                             WHERE idusuario=?");
+                    $sql = $pdo->prepare("UPDATE USUARIO SET idusuario=?,nome=?,email=?,telefone=?,senha=?, administrador=? WHERE idusuario=?");
                     if ($sql->execute(array($idusuario, $nome, $email, $telefone, md5($senha), $administrador, $idusuario))) {
                         $msgErro = "Dados alterados com sucesso!";
                         header('location:altUsuario.php');
@@ -89,7 +84,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST" && isset($_POST['submit'])) {
     }
 }
 
-
+include "header.php"
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -97,14 +92,14 @@ if ($_SERVER['REQUEST_METHOD'] == "POST" && isset($_POST['submit'])) {
 <head>
     <meta charset="UTF-8">
     <title>Cadastro de Usuário</title>
-    <link rel="stylesheet" href="../css/estilo.css">
+    <link rel="stylesheet" href="../css/monte.css">
 </head>
 
 <body>
     <form method="POST" enctype="multipart/form-data">
         <fieldset>
             <div class="from">
-                <legend>Cadastro de Usuário</legend>
+                <legend>Alterar Usuário</legend>
                 Nome: <input type="text" name="nome" value="<?php echo $nome ?>">
                 <span class="obrigatorio">*<?php echo $nomeErro ?></span>
                 <br>
@@ -119,8 +114,8 @@ if ($_SERVER['REQUEST_METHOD'] == "POST" && isset($_POST['submit'])) {
                 <br>
                 <input type="checkbox" name="administrador" id="">Administrador
                 <br>
+                <br>
                 <input class="submit" type="submit" value="Salvar" name="submit">
-        </fieldset>
         </fieldset>
     </form>
     <span><?php echo $msgErro ?></span>
@@ -128,3 +123,4 @@ if ($_SERVER['REQUEST_METHOD'] == "POST" && isset($_POST['submit'])) {
 </body>
 
 </html>
+
