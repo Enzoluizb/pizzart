@@ -7,6 +7,7 @@ $sql = $pdo->prepare('SELECT * FROM usuario');
 if ($sql->execute()) {
     $info = $sql->fetchAll(PDO::FETCH_ASSOC);
 
+
     echo "<table border='1'>";
     echo "<tr>";
     echo "  <th>Código</th>";
@@ -14,6 +15,8 @@ if ($sql->execute()) {
     echo "  <th>Email</th>";
     echo "  <th>Telefone</th>";
     echo "  <th>Senha</th>";
+    echo "  <th>Endereço</th>";
+    echo "  <th>Administrador</th>";
     echo "  <th>Alterar</th>";
     echo "  <th>Excluir</th>";
     echo "</tr>";
@@ -24,6 +27,8 @@ if ($sql->execute()) {
         echo "<td>" . $value['email'] . "</td>";
         echo "<td>" . $value['telefone'] . "</td>";
         echo "<td>" . $value['senha'] . "</td>";
+        echo "<td>" . $value['endereco'] . "</td>";
+        echo "<td>" . $value['administrador'] . "</td>";
 
         echo "<td><center><a href='altUsuario.php?id=" . $value['idusuario'] . "'>(+)</a></center></td>";
         echo "<td><center><a href='delUsuario.php?id=" . $value['idusuario'] . "'>(-)</a></center></td>";

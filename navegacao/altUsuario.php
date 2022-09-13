@@ -6,13 +6,14 @@ $idusuario = "";
 $nome = "";
 $email = "";
 $telefone = "";
+$endereco = "";
 $senha = "";
-$imgContent = "";
 $administrador = "";
 
 $nomeErro = "";
 $emailErro = "";
 $telefoneErro = "";
+$enderecoErro = "";
 $senhaErro = "";
 $msgErro = "";
 
@@ -26,6 +27,7 @@ if (isset($_GET['id'])) {
             $nome = $value['nome'];
             $email = $value['email'];
             $telefone = $value['telefone'];
+            $endereco = $value['endereco'];
             $administrador = $value['administrador'];
             $senha = '';
         }
@@ -48,6 +50,11 @@ if ($_SERVER['REQUEST_METHOD'] == "POST" && isset($_POST['submit'])) {
     else
         $telefone = $_POST['telefone'];
 
+    if (empty($_POST['endereco']))
+        $enderecoErro = "Endereço é obrigatório!";
+    else
+        $endereco = $_POST['endereco'];
+
     if (empty($_POST['senha']))
         $senhaErro = "Senha é obrigatório!";
     else
@@ -59,14 +66,14 @@ if ($_SERVER['REQUEST_METHOD'] == "POST" && isset($_POST['submit'])) {
         $administrador = 0;
 
 
-    if ($email && $nome && $senha && $telefone) {
+    if ($email && $nome && $senha && $telefone && $endereco) {
         //Verificar se ja existe o email
         $sql = $pdo->prepare("SELECT * FROM USUARIO WHERE email = ? AND idusuario <> ?");
         if ($sql->execute(array($email, $idusuario))) {
             if ($sql->rowCount() <= 0) {
-                if ($email && $nome && $senha && $telefone) {
-                    $sql = $pdo->prepare("UPDATE USUARIO SET idusuario=?,nome=?,email=?,telefone=?,senha=?, administrador=? WHERE idusuario=?");
-                    if ($sql->execute(array($idusuario, $nome, $email, $telefone, md5($senha), $administrador, $idusuario))) {
+                if ($email && $nome && $senha && $telefone && $endereco) {
+                    $sql = $pdo->prepare("UPDATE USUARIO SET idusuario=?,nome=?,email=?,telefone=?, endereco=?, senha=?, administrador=? WHERE idusuario=?");
+                    if ($sql->execute(array($idusuario, $nome, $email, $telefone, $endereco, md5($senha), $administrador, $idusuario))) {
                         $msgErro = "Dados alterados com sucesso!";
                         header('location:listUsuarios.php');
                     } else {
@@ -109,6 +116,9 @@ include "header.php"
                 Telefone:<input type="text" name="telefone" value="<?php echo $telefone ?>">
                 <span class="obrigatorio">*<?php echo $telefoneErro ?></span>
                 <br>
+                Endereço:<input type="text" name="endereco" value="<?php echo $endereco ?>">
+                <span class="obrigatorio">*<?php echo $enderecoErro ?></span>
+                <br>
                 Senha:<input type="password" name="senha" value="<?php echo $senha ?>">
                 <span class="obrigatorio">*<?php echo $senhaErro ?></span>
                 <br>
@@ -123,4 +133,3 @@ include "header.php"
 </body>
 
 </html>
-
