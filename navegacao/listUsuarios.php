@@ -2,11 +2,13 @@
 $title = "Pizzart | Lista de Usuários";
 include "header.php";
 include "../include/mysql.php";
+?>
+
+<?php
 
 $sql = $pdo->prepare('SELECT * FROM usuario');
 if ($sql->execute()) {
     $info = $sql->fetchAll(PDO::FETCH_ASSOC);
-
 
     echo "<table border='1'>";
     echo "<tr>";
@@ -37,8 +39,11 @@ if ($sql->execute()) {
     echo "</table>";
 }
 ?>
+
 <input type="button" value="Cadastrar" onclick="parent.location='cadUsuario.php'">
 <h3><a href="listUsuarios.php">Principal</a></h3>
+
+
 
 <?php
 include "footer.php";
