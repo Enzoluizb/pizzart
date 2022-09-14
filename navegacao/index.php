@@ -14,16 +14,6 @@ session_start();
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
 </head>
 
-<div class="sessao">
-<?php if ($_SESSION['nome'] != "") { ?>
-        <h1>Olá <?php echo $_SESSION['nome'] ?>!</h1>
-        <h3><a href="logout.php">Encerrar sessão</a></h3>
-    <?php } else { ?>
-        <h1 class="logado">Você não está logado!</h1>
-        <h3><a href="login.php">Login</a></h3>
-    <?php } ?>
-    </div>
-
 <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="true">
   <div class="carousel-indicators">
     <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
@@ -50,6 +40,16 @@ session_start();
     <span class="visually-hidden">Next</span>
   </button>
 </div>
+
+<div class="sessao">
+<?php if ($_SESSION['nome'] != "") { ?>
+        <h1>Olá <?php echo $_SESSION['nome'] ?>!</h1>
+        <h3><a href="logout.php">Encerrar sessão</a></h3>
+    <?php } else { ?>
+        <h1 class="logado">Você não está logado!</h1>
+        <h3><a href="login.php">Login</a></h3>
+    <?php } ?>
+    </div>
 
 <div class="principal1">
     <h1>CONFIRA NOSSAS PIZZAS</h1>
