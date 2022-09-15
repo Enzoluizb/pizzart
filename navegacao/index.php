@@ -1,7 +1,6 @@
 <?php 
 $title = "Pizzart | Página Inicial";
 include "header.php";
-session_start();
 ?>
 
 <head>
@@ -40,16 +39,6 @@ session_start();
     <span class="visually-hidden">Next</span>
   </button>
 </div>
-
-<div class="sessao">
-<?php if ($_SESSION['nome'] != "") { ?>
-        <h1>Olá <?php echo $_SESSION['nome'] ?>!</h1>
-        <h3><a href="logout.php">Encerrar sessão</a></h3>
-    <?php } else { ?>
-        <h1 class="logado">Você não está logado!</h1>
-        <h3><a href="login.php">Login</a></h3>
-    <?php } ?>
-    </div>
 
 <div class="principal1">
     <h1>CONFIRA NOSSAS PIZZAS</h1>
