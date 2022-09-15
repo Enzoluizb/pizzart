@@ -40,8 +40,11 @@ if ($sql->execute()) {
 }
 ?>
 
-<input type="button" value="Cadastrar" onclick="parent.location='cadUsuario.php'">
-<h3><a href="listUsuarios.php">Principal</a></h3>
+<div class="botoes">
+    <input id="li" type="button" value="Cadastrar" onclick="parent.location='cadUsuario.php'">
+    <h3><a href="index.php">Principal</a></h3>
+</div>
+
 
 
 

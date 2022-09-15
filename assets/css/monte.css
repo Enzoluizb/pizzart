@@ -332,3 +332,42 @@ h3 a {
 .sessao {
     text-align: center;
 }
+
+table {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 100px 20px;
+    background: #ffff;
+    border-radius: 10px;
+    border: none;
+}
+
+table th {
+    margin: 20px;
+    padding: 20px;
+}
+
+table td {
+    margin: 20px;
+    padding: 30px;
+}
+
+.botoes {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 100px;
+}
+
+.botoes .botao-table {
+    border-radius: 20px;
+}
+
+#li {
+    background-color: white;
+    color: black;
+    padding: 5px;
+    border-radius: 10px;
+}
