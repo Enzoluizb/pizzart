@@ -19,14 +19,12 @@ include "header.php";
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
 </head> -->
 
-<div>Você escolheu o massa: <?php echo $_POST['tipo_massa'] ?></div>
-<div>Você escolheu o tamanho: <?php echo $_POST['tipo_tamanho'] ?></div>
-<div>Você escolheu o molho: <?php echo $_POST['tipo_molho'] ?></div>
-<div>Você escolheu o queijo: <?php echo $_POST['tipo_queijo'] ?></div>
-<div>Você escolheu a carne: <?php echo $_POST['tipo_carne'] ?></div>
-<div>Você escolheu o complemento: <?php echo $_POST['tipo_complemento'] ?></div>
-<div>Você escolheu a bebida: <?php echo $_POST['tipo_bebida'] ?></div>
+
+
+
 <?php
+
+
 
 $valor =  0;
 if ($_POST['tipo_massa'] == 'Tradicional') {
@@ -89,16 +87,42 @@ if ($_POST['tipo_complemento'] == 'Tomate Cereja') {
 if ($_POST['tipo_bebida'] == 'COCA-COLA 2L') {
     $valor = $valor + 12;
 }
-if ($_POST['tipo_bebida'] == 'COCA-COLA 2L') {
+if ($_POST['tipo_bebida'] == 'FANTA 2L') {
     $valor = $valor + 12;
 }
-if ($_POST['tipo_bebida'] == 'COCA-COLA 2L') {
+if ($_POST['tipo_bebida'] == 'GUARANA 2L') {
     $valor = $valor + 12;
 }
-
 
 ?>
-Preço total: <?php echo $valor; ?>
+
+<table>
+    <tr>
+        <th>Você escolheu o massa: <?php echo $_POST['tipo_massa'] ?></th>
+    </tr>
+    <tr>
+        <th>Você escolheu o tamanho: <?php echo $_POST['tipo_tamanho'] ?></th>
+    </tr>
+    <tr>
+        <th>Você escolheu o molho: <?php echo $_POST['tipo_molho'] ?></th>
+    </tr>
+    <tr>
+        <th>Você escolheu o queijo: <?php echo $_POST['tipo_queijo'] ?></th>
+    </tr>
+    <tr>
+        <th>Você escolheu a carne: <?php echo $_POST['tipo_carne'] ?></th>
+    </tr>
+    <tr>
+        <th>Você escolheu o complemento: <?php echo $_POST['tipo_complemento'] ?></th>
+    </tr>
+    <tr>
+        <th>Você escolheu a bebida: <?php echo $_POST['tipo_bebida'] ?></th>
+    </tr>
+    <tr>
+        <th>Preço total: <?php echo $valor; ?></th>
+    </tr>
+</table>
+
 <?php
 include "footer.php";
 ?>

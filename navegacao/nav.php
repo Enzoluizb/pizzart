@@ -8,7 +8,7 @@
         <a class="cabecalho-menu-item" href="login.php">Login/Inscreva-se</a>
     </nav>
     <div class="sessao">
-        <?php if ($_SESSION['nome'] != "") { ?>
+    <?php if (isset($_SESSION['nome'])){?>
             <h1>Olá <?php echo $_SESSION['nome'] ?>!</h1>
             <h3><a href="logout.php">Encerrar sessão</a></h3>
         <?php } else { ?>

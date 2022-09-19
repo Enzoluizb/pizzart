@@ -339,7 +339,7 @@ table {
     align-items: center;
     justify-content: center;
     margin: 100px 20px;
-    background: #ffff;
+    background: rgb(255, 255, 255);
     border-radius: 10px;
     border: none;
 }
@@ -367,7 +367,7 @@ table td {
 }
 
 #li {
-    background-color: white;
+    background-color: rgb(255, 255, 255);
     color: black;
     padding: 5px;
     border-radius: 10px;
