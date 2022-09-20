@@ -7,12 +7,12 @@ if(empty($_SESSION['nome'])){
 } else {
     $valor = 0; 
     if ($_POST['tipo_massa'] == 'Tradicional') {
-        $valor = $valor + 10;
-    }
+    $valor = $valor + 10;
+    } 
     if ($_POST['tipo_massa'] == 'Integral') {
-        $valor = $valor + 15;
-    }
-    
+    $valor = $valor + 12;
+    } 
+
     if ($_POST['tipo_tamanho'] == 'Pequena') {
         $valor = $valor + 20;
     }
@@ -92,7 +92,7 @@ if(empty($_SESSION['nome'])){
 
 <table>
     <tr>
-        <th>Você escolheu o massa: <?php echo $_POST['tipo_massa'] ?></th>
+        <th>Você escolheu o massa: <?php echo $_POST['tipo_massa']?></th>
     </tr>
     <tr>
         <th>Você escolheu o tamanho: <?php echo $_POST['tipo_tamanho'] ?></th>
