@@ -12,7 +12,7 @@
             <h1 class="logado">Você não está logado!</h1>
             <h3><a href="login.php">Login</a></h3>
         <?php } else { ?>
-            <h1>Olá <?php echo $_SESSION['nome'] ?>!</h1>
+            <h1 class="logado">Olá <?php echo $_SESSION['nome'] ?>!</h1>
             <h3><a href="logout.php">Encerrar sessão</a></h3>
         <?php } ?>
     </div>
