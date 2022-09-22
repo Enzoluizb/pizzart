@@ -2,76 +2,97 @@
 $title = "Pizzart | Finalizar pedido";
 include "header.php";
 
-if(empty($_SESSION['nome'])){
-    header('location:login.php');
-} else {
-    $valor = 0; 
-    if ($_POST['tipo_massa'] == 'Tradicional') {
-    $valor = $valor + 10;
-    } 
-    if ($_POST['tipo_massa'] == 'Integral') {
-    $valor = $valor + 12;
-    } 
+$pedido=true;
+$valor = 0;
 
-    if ($_POST['tipo_tamanho'] == 'Pequena') {
-        $valor = $valor + 20;
-    }
-    if ($_POST['tipo_tamanho'] == 'Média') {
-        $valor = $valor + 30;
-    }
-    if ($_POST['tipo_tamanho'] == 'Grande') {
-        $valor = $valor + 40;
-    }
-    
-    if ($_POST['tipo_molho'] == 'Tomate') {
+if (!isset($_POST['tipo_massa']))
+   $pedido = false;
+else if (!isset($_POST['tipo_tamanho']))
+   $pedido = false;
+else if (!isset($_POST['tipo_molho']))
+   $pedido = false;
+else if (!isset($_POST['tipo_queijo']))
+   $pedido = false;
+else if (!isset($_POST['tipo_carne']))
+   $pedido = false;
+else if (!isset($_POST['tipo_complemento']))
+   $pedido = false;
+
+
+if ($pedido){
+    if(empty($_SESSION['nome'])){
+        header('location:login.php');
+    } else {
+         
+        if ($_POST['tipo_massa'] == 'Tradicional') {
         $valor = $valor + 10;
-    }
-    if ($_POST['tipo_molho'] == 'Pimenta') {
-        $valor = $valor + 10;
-    }
-    if ($_POST['tipo_molho'] == 'Pesto') {
-        $valor = $valor + 15;
-    }
-    
-    if ($_POST['tipo_queijo'] == 'Gorgonzola') {
-        $valor = $valor + 15;
-    }
-    if ($_POST['tipo_queijo'] == 'Mussarela') {
-        $valor = $valor + 10;
-    }
-    if ($_POST['tipo_queijo'] == 'Parmesão') {
-        $valor = $valor + 10;
-    }
-    
-    if ($_POST['tipo_carne'] == 'Bacon') {
-        $valor = $valor + 15;
-    }
-    if ($_POST['tipo_carne'] == 'Calabresa') {
-        $valor = $valor + 10;
-    }
-    if ($_POST['tipo_carne'] == 'Frango') {
-        $valor = $valor + 10;
-    }
-    
-    if ($_POST['tipo_complemento'] == 'Cebola') {
-        $valor = $valor + 10;
-    }
-    if ($_POST['tipo_complemento'] == 'Ovo') {
-        $valor = $valor + 10;
-    }
-    if ($_POST['tipo_complemento'] == 'Tomate Cereja') {
-        $valor = $valor + 10;
-    }
-    
-    if ($_POST['tipo_bebida'] == 'COCA-COLA 2L') {
+        } 
+        if ($_POST['tipo_massa'] == 'Integral') {
         $valor = $valor + 12;
+        } 
+
+        if ($_POST['tipo_tamanho'] == 'Pequena') {
+            $valor = $valor + 20;
+        }
+        if ($_POST['tipo_tamanho'] == 'Média') {
+            $valor = $valor + 30;
+        }
+        if ($_POST['tipo_tamanho'] == 'Grande') {
+            $valor = $valor + 40;
+        }
+        
+        if ($_POST['tipo_molho'] == 'Tomate') {
+            $valor = $valor + 10;
+        }
+        if ($_POST['tipo_molho'] == 'Pimenta') {
+            $valor = $valor + 10;
+        }
+        if ($_POST['tipo_molho'] == 'Pesto') {
+            $valor = $valor + 15;
+        }
+        
+        if ($_POST['tipo_queijo'] == 'Gorgonzola') {
+            $valor = $valor + 15;
+        }
+        if ($_POST['tipo_queijo'] == 'Mussarela') {
+            $valor = $valor + 10;
+        }
+        if ($_POST['tipo_queijo'] == 'Parmesão') {
+            $valor = $valor + 10;
+        }
+        
+        if ($_POST['tipo_carne'] == 'Bacon') {
+            $valor = $valor + 15;
+        }
+        if ($_POST['tipo_carne'] == 'Calabresa') {
+            $valor = $valor + 10;
+        }
+        if ($_POST['tipo_carne'] == 'Frango') {
+            $valor = $valor + 10;
+        }
+        
+        if ($_POST['tipo_complemento'] == 'Cebola') {
+            $valor = $valor + 10;
+        }
+        if ($_POST['tipo_complemento'] == 'Ovo') {
+            $valor = $valor + 10;
+        }
+        if ($_POST['tipo_complemento'] == 'Tomate Cereja') {
+            $valor = $valor + 10;
+        }
+        
+        if ($_POST['tipo_bebida'] == 'COCA-COLA 2L') {
+            $valor = $valor + 12;
+        }
+        if ($_POST['tipo_bebida'] == 'FANTA 2L') {
+            $valor = $valor + 12;
+        }
+        if ($_POST['tipo_bebida'] == 'GUARANA 2L') {
+            $valor = $valor + 12;
+        }
     }
-    if ($_POST['tipo_bebida'] == 'FANTA 2L') {
-        $valor = $valor + 12;
-    }
-    if ($_POST['tipo_bebida'] == 'GUARANA 2L') {
-        $valor = $valor + 12;
-    }
+} else {
+    //echo "falta complementos";
 }
 
 // echo '<pre>';
@@ -92,25 +113,25 @@ if(empty($_SESSION['nome'])){
 
 <table>
     <tr>
-        <th>Você escolheu o massa: <?php echo $_POST['tipo_massa']?></th>
+        <th>Você escolheu o massa: <?php echo isset($_POST['tipo_massa'])?$_POST['tipo_massa']:"Não informado"?></th>
     </tr>
     <tr>
-        <th>Você escolheu o tamanho: <?php echo $_POST['tipo_tamanho'] ?></th>
+        <th>Você escolheu o tamanho: <?php echo isset($_POST['tipo_tamanho'])?$_POST['tipo_tamanho']:"Não informado"?></th>
     </tr>
     <tr>
-        <th>Você escolheu o molho: <?php echo $_POST['tipo_molho'] ?></th>
+        <th>Você escolheu o molho: <?php echo isset($_POST['tipo_molho'])?$_POST['tipo_molho']:"Não informado"?></th>
     </tr>
     <tr>
-        <th>Você escolheu o queijo: <?php echo $_POST['tipo_queijo'] ?></th>
+        <th>Você escolheu o queijo: <?php echo isset($_POST['tipo_queijo'])?$_POST['tipo_queijo']:"Não informado"?></th>
     </tr>
     <tr>
-        <th>Você escolheu a carne: <?php echo $_POST['tipo_carne'] ?></th>
+        <th>Você escolheu a carne: <?php echo isset($_POST['tipo_carne'])?$_POST['tipo_carne']:"Não informado"?></th>
     </tr>
     <tr>
-        <th>Você escolheu o complemento: <?php echo $_POST['tipo_complemento'] ?></th>
+        <th>Você escolheu o complemento: <?php echo isset($_POST['tipo_complemento'])?$_POST['tipo_complemento']:"Não informado"?></th>
     </tr>
     <tr>
-        <th>Você escolheu a bebida: <?php echo $_POST['tipo_bebida'] ?></th>
+        <th>Você escolheu a bebida: <?php echo isset($_POST['tipo_bebida'])?$_POST['tipo_bebida']:"Não informado"?></th>
     </tr>
     <tr>
         <th>Preço total: <?php echo $valor; ?></th>
