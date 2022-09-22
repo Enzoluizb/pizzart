@@ -158,6 +158,9 @@ if ($pedido) {
     <tr>
         <th><a href="pedido2.php"><button style="padding: 5px; border: none; background: #bdbdbd; color: black; border-radius: 5px;">Finalizar pedido</button></a></th>
     </tr>
+    <tr>
+    <th>Pedido finalizado!</th>
+    </tr>
 </table>
 
 <?php
