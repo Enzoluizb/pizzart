@@ -7,20 +7,8 @@ $pedido = true;
 $valor = 0;
 
 if (!isset($_POST['tipo_massa']))
-    $pedido = false;
-else if (!isset($_POST['tipo_tamanho']))
-    $pedido = false;
-else if (!isset($_POST['tipo_molho']))
-    $pedido = false;
-else if (!isset($_POST['tipo_queijo']))
-    $pedido = false;
-else if (!isset($_POST['tipo_carne']))
-    $pedido = false;
-else if (!isset($_POST['tipo_complemento']))
-    $pedido = false;
-else if (!isset($_POST['tipo_bebida']))
-    $pedido = false;
-
+$pedido = false;
+$valor = 0;
 
 if ($pedido) {
     if (empty($_SESSION['nome'])) {
@@ -118,48 +106,17 @@ if ($pedido) {
 
 <table>
     <tr>
-        <th>Você escolheu o massa: <?php echo isset($_POST['tipo_massa']) ? $_POST['tipo_massa'] : "Não informado" ?></th>
-    </tr>
-    <tr>
-        <th>Você escolheu o tamanho: <?php echo isset($_POST['tipo_tamanho']) ? $_POST['tipo_tamanho'] : "Não informado" ?></th>
-    </tr>
-    <tr>
-        <th>Você escolheu o molho: <?php echo isset($_POST['tipo_molho']) ? $_POST['tipo_molho'] : "Não informado" ?></th>
-    </tr>
-    <tr>
-        <th>Você escolheu o queijo: <?php echo isset($_POST['tipo_queijo']) ? $_POST['tipo_queijo'] : "Não informado" ?></th>
-    </tr>
-    <tr>
-        <th>Você escolheu a carne: <?php echo isset($_POST['tipo_carne']) ? $_POST['tipo_carne'] : "Não informado" ?></th>
-    </tr>
-    <tr>
-        <th>Você escolheu o complemento: <?php echo isset($_POST['tipo_complemento']) ? $_POST['tipo_complemento'] : "Não informado" ?></th>
-    </tr>
-    <tr>
-        <th>Você escolheu a bebida: <?php echo isset($_POST['tipo_bebida']) ? $_POST['tipo_bebida'] : "Não informado" ?></th>
-    </tr>
-    <tr>
-        <th>Preço total: <?php echo $valor; ?></th>
-    </tr>
-    <tr>
         <th>
-            <select name="select">
-                <option value="valor1" selected>Pix</option>
-                <option value="valor2">Cartão</option>
-                <option value="valor3">Dinheiro</option>
-            </select>
+            Sua arte está pronta!
         </th>
     </tr>
     <tr>
         <th>
-            Endereço: <input type="">
+            Obrigado pela preferência
         </th>
     </tr>
     <tr>
-        <th><a href="pedido2.php"><button style="padding: 5px; border: none; background: #bdbdbd; color: black; border-radius: 5px;">Finalizar pedido</button></a></th>
-    </tr>
-    <tr>
-    <th>Pedido finalizado!</th>
+    <th><a style="text-decoration: none; font-size: 20px; color: yellowgreen;" href="index.php">Pedido finalizado!</a></th>
     </tr>
 </table>
 
