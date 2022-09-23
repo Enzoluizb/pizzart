@@ -121,7 +121,6 @@ if ($_SERVER['REQUEST_METHOD'] == "POST" && isset($_POST['submit'])) {
                             <label for="email">Endereço:</label>
                             <input type="text" name="endereco" class="rounded-3 border border-dark px-3 mb-2 w-75 h-25" placeholder="Digite seu endereço" value="<?php echo $endereco ?>">
                             <span class="obrigatorio"><?php echo $enderecoErro ?></span>
-                            <input type="checkbox" name="administrador">Administrador
                             <input type="submit" value="Salvar" name="submit" class="h5">
                             <span><?php echo $msgErro ?></span>
                         </fieldset>

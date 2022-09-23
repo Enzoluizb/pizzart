@@ -33,7 +33,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             if (count($info) > 0) {
                 foreach ($info as $key => $values) {
                     $_SESSION['nome'] = $values['nome'];
-                    $_SESSION['administrador'] = '1';
+                    $_SESSION['administrador'] = $values['administrador'];
                     header('location:index.php');
                 }
             } else {

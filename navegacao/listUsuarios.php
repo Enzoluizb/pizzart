@@ -2,6 +2,11 @@
 $title = "Pizzart | Lista de Usuários";
 include "header.php";
 include "../include/mysql.php";
+
+if ($_SESSION['administrador'] == 0) {
+    echo "<h1>Você não tem permissão para acessar essa página</h1>";
+    die();
+}
 ?>
 
 <?php

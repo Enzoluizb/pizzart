@@ -35,7 +35,7 @@ include "../include/MySql.php";
                 <label for="massa_trad" style="display: flex;flex-direction: column; align-items: center;">
                     <img src="../assets/imgs/massas/tradicional.jpg" alt="">
                     <p>Tradicional</p>
-                    <input type="radio" name="tipo_massa" value="Tradicional" id="massa_trad" style="margin-top: -16px;">
+                    <input type="radio" name="tipo_massa" value="Tradicional" id="massa_trad" style="margin-top: -16px;" required>
                 </label>
             </div>
             <div class="ui radio checkbox">
@@ -55,7 +55,7 @@ include "../include/MySql.php";
                 <label for="massa_peq" style="display: flex;flex-direction: column; align-items: center;">
                     <img src="../assets/imgs/tamanho/20CM.png" alt="">
                     <p>Pequena</p>
-                    <input type="radio" name="tipo_tamanho" value="Pequena" id="massa_peq" style="margin-top: -16px;">
+                    <input type="radio" name="tipo_tamanho" value="Pequena" id="massa_peq" style="margin-top: -16px;" required>
                 </label>
             </div>
             <div class="ui radio checkbox">
@@ -83,7 +83,7 @@ include "../include/MySql.php";
                 <label for="molho_tom" style="display: flex;flex-direction: column; align-items: center;">
                     <img src="../assets/imgs/molho/tomate.png" alt="">
                     <p>Tomate</p>
-                    <input type="radio" name="tipo_molho" value="Tomate" id="molho_tom" style="margin-top: -16px;">
+                    <input type="radio" name="tipo_molho" value="Tomate" id="molho_tom" style="margin-top: -16px;" required>
                 </label>
             </div>
             <div class="ui radio checkbox">
@@ -111,7 +111,7 @@ include "../include/MySql.php";
                 <label for="queijo_gor" style="display: flex;flex-direction: column; align-items: center;">
                     <img src="../assets/imgs/queijos/gorgonzola.jpg" alt="">
                     <p>Gorgonzola</p>
-                    <input type="radio" name="tipo_queijo" value="Gorgonzola" id="queijo_gor" style="margin-top: -16px;">
+                    <input type="radio" name="tipo_queijo" value="Gorgonzola" id="queijo_gor" style="margin-top: -16px;" required>
                 </label>
             </div>
             <div class="ui radio checkbox">
@@ -139,7 +139,7 @@ include "../include/MySql.php";
                 <label for="carne_bac" style="display: flex;flex-direction: column; align-items: center;">
                     <img src="../assets/imgs/carnes/bacon.png" alt="">
                     <p>Bacon</p>
-                    <input type="radio" name="tipo_carne" value="Bacon" id="carne_bac" style="margin-top: -16px;"> 
+                    <input type="radio" name="tipo_carne" value="Bacon" id="carne_bac" style="margin-top: -16px;" required> 
                 </label>
             </div>
             <div class="ui radio checkbox">

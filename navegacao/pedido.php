@@ -3,26 +3,26 @@ $title = "Pizzart | Finalizar pedido";
 include "header.php";
 include "../include/mysql.php";
 
-$pedido = true;
+// $pedido = true;
 $valor = 0;
 
-if (!isset($_POST['tipo_massa']))
-    $pedido = false;
-else if (!isset($_POST['tipo_tamanho']))
-    $pedido = false;
-else if (!isset($_POST['tipo_molho']))
-    $pedido = false;
-else if (!isset($_POST['tipo_queijo']))
-    $pedido = false;
-else if (!isset($_POST['tipo_carne']))
-    $pedido = false;
-else if (!isset($_POST['tipo_complemento']))
-    $pedido = false;
-else if (!isset($_POST['tipo_bebida']))
-    $pedido = false;
+// if (!isset($_POST['tipo_massa']))
+//     $pedido = false;
+// else if (!isset($_POST['tipo_tamanho']))
+//     $pedido = false;
+// else if (!isset($_POST['tipo_molho']))
+//     $pedido = false;
+// else if (!isset($_POST['tipo_queijo']))
+//     $pedido = false;
+// else if (!isset($_POST['tipo_carne']))
+//     $pedido = false;
+// else if (!isset($_POST['tipo_complemento']))
+//     $pedido = false;
+// else if (!isset($_POST['tipo_bebida']))
+//     $pedido = false;
 
 
-if ($pedido) {
+// if ($pedido) {
     if (empty($_SESSION['nome'])) {
         header('location:login.php');
     } else {
@@ -74,6 +74,7 @@ if ($pedido) {
             $valor = $valor + 10;
         }
 
+        if (isset($_POST['tipo_bebida'])){
         if ($_POST['tipo_complemento'] == 'Cebola') {
             $valor = $valor + 10;
         }
@@ -83,7 +84,9 @@ if ($pedido) {
         if ($_POST['tipo_complemento'] == 'Tomate Cereja') {
             $valor = $valor + 10;
         }
+    }
 
+        if (isset($_POST['tipo_bebida'])){
         if ($_POST['tipo_bebida'] == 'COCA-COLA 2L') {
             $valor = $valor + 12;
         }
@@ -94,9 +97,10 @@ if ($pedido) {
             $valor = $valor + 12;
         }
     }
-} else {
-    //echo "falta complementos";
-}
+    }
+// } else {
+//     //echo "falta complementos";
+// }
 
 
 
@@ -139,7 +143,7 @@ if ($pedido) {
         <th>Você escolheu a bebida: <?php echo isset($_POST['tipo_bebida']) ? $_POST['tipo_bebida'] : "Não informado" ?></th>
     </tr>
     <tr>
-        <th>Preço total: <?php echo $valor; ?></th>
+        <th>Preço total: R$<?php echo $valor; ?>,00</th>
     </tr>
     <tr>
         <th>
@@ -152,7 +156,7 @@ if ($pedido) {
     </tr>
     <tr>
         <th>
-            Endereço: <input type="">
+            Endereço: <input type="text"> <th> Número: <input type="text"></th>
         </th>
     </tr>
     <tr>
