@@ -122,7 +122,7 @@ $valor = 0;
 
 <table>
     <tr>
-        <th>Você escolheu o massa: <?php echo isset($_POST['tipo_massa']) ? $_POST['tipo_massa'] : "Não informado" ?></th>
+        <th>Você escolheu a massa: <?php echo isset($_POST['tipo_massa']) ? $_POST['tipo_massa'] : "Não informado" ?></th>
     </tr>
     <tr>
         <th>Você escolheu o tamanho: <?php echo isset($_POST['tipo_tamanho']) ? $_POST['tipo_tamanho'] : "Não informado" ?></th>
