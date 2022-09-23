@@ -1,5 +1,8 @@
 <footer class="rodape">
+    <div class="logoeadmin" style="display: flex; flex-direction:column; align-items:center;">
         <img class="rodape-imagem" src="../assets/imgs/pizzartpng.png" alt="">
+        <a href="listUsuarios.php" style="text-decoration: none; font-size: 5px; color:whitesmoke;">pgadmin</a>
+        </div>
         <div class="s-m">
             <ul>
                 <a href="https://facebook.com/"><i class="fa-brands fa-facebook"></i></a>
